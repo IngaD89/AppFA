@@ -10,13 +10,12 @@ module.exports = {
         historyApiFallback: true
     },
     entry: [
-        path.join(__dirname, 'src/js/main.js'),
-        path.join(__dirname, 'src/scss/main.scss')
+        path.join(__dirname, 'src/js/main.js')
     ],
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, 'build'),
-
+        clean: true
     },
     resolve: {
         extensions: [".js", ".jsx", ".scss"]
@@ -26,12 +25,24 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: "babel-loader",
+                options: {
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react',
+                        {
+                            plugins: [
+                                '@babel/plugin-proposal-class-properties',
+                                '@babel/plugin-transform-runtime'
+                            ],
+                        }
+                    ]
+                }
             },
             {
-                test: /\.s?css$/,
+                test: /\.scss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    "style-loader",
                     "css-loader",
                     "sass-loader"
                 ]
@@ -45,8 +56,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: isDevelopment ? '[name].css' : '[name].[fullhash].css',
             chunkFilename: isDevelopment ? '[id].css' : '[id].[fullhash].css'
-        }),
-
+        })
     ]
 
 }
