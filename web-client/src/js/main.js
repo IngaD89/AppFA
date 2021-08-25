@@ -1,9 +1,11 @@
-import '../scss/main.scss'
-import React from "react";
-import * as ReactDOM from "react-dom";
-import App from "./components/App";
+import '../scss/main.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+import {App} from './components/App'
 
 ReactDOM.render(
-    <App />,
+    React.createElement(App),
     document.getElementById("app")
 )

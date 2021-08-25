@@ -18,7 +18,7 @@ module.exports = {
         clean: true
     },
     resolve: {
-        extensions: [".js", ".jsx", ".scss"]
+        extensions: [".js", ".jsx", ".scss", ".css"]
     },
     module: {
         rules: [
@@ -38,6 +38,17 @@ module.exports = {
                         }
                     ]
                 }
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            // publicPath: 'build',
+                        }
+                    },
+                ]
             },
             {
                 test: /\.scss$/,
