@@ -19,6 +19,6 @@ public class PacienteController {
 
     @GetMapping("/pacientes")
     public List<Paciente> allPacientes(){
-        return pacienteRepository.saveAll();
+        return pacienteRepository.findAll();
     }
 }
