@@ -1,3 +1,4 @@
+/*
 package org.factoriaf5.appfa.security;
 
 import org.springframework.context.annotation.Bean;
@@ -8,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    @Override
+
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("user")
@@ -19,3 +20,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return NoOpPasswordEncoder.getInstance();
     }
 }
+*/
