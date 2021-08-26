@@ -1,13 +1,26 @@
-body{
+body {
   margin: 0;
   padding: 0;
   background-color: #CCC;
 }
 html {
+  margin: 0;
+  padding: 0;
   color: #000;
   font-family: Helvetica, Arial, Verdana, sans-serif;
-  font-size: 1rem;
-  line-height: 2rem;
+  font-size: 1em;
+  line-height: 2em;
+}
+a {
+  color: #08693E;
+  text-decoration: none;
+}
+a:hover {
+  color: #08693E;
+  font-weight: 500;
+}
+p {
+  color: #111;
 }
 
 /* MENU BURGER */
@@ -19,7 +32,9 @@ html {
   left: 36px;
   top: 36px;
 }
-
+.logo {
+  max-width: 200px;
+}
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #373a47;
@@ -34,6 +49,7 @@ html {
 .bm-cross-button {
   height: 24px;
   width: 24px;
+  color: #FF0000;
 }
 
 /* Color/shape of close button cross */
@@ -48,11 +64,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  top: 0;
+  left:0;
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: #CCC;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -76,4 +94,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* FOOTER */
+
+.copy {
+  font-size: 0.5em;
+  border-top: thin solid #333;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
