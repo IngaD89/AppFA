@@ -7,7 +7,6 @@ import {Datos} from "./Datos";
 import {Notificaciones} from "./Notificaciones";
 import {Contacto} from "./Contacto";
 
-
 export const App = () => {
     return <Router>
         <NavigationBar/>

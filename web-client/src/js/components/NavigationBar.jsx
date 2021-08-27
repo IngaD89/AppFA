@@ -3,8 +3,6 @@ import { slide as Menu } from 'react-burger-menu';
 import logo from './assets/img/FA-APP-logo.svg';
 
 
-
-
 export const NavigationBar = () => {
     return (
         <Menu>
