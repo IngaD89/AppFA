@@ -6,6 +6,7 @@ import {Login} from "./Login";
 import {Datos} from "./Datos";
 import {Notificaciones} from "./Notificaciones";
 import {Contacto} from "./Contacto";
+import {Altas} from "./Altas";
 
 export const App = () => {
     return <Router>
@@ -25,6 +26,9 @@ export const App = () => {
             </Route>
             <Route path="/Contacto">
                 <Contacto/>
+                <Route path="Altas">
+                <Altas />
+                </Route>
             </Route>
     </Switch>
 </Router>
