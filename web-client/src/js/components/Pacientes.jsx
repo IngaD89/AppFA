@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationBar} from "./NavigationBar";
 
 
-export const Datos = () => {
+export const Pacientes = () => {
     return (
         <div>
             <NavigationBar />
