@@ -32,9 +32,7 @@ export const App = () => {
             <Route path="/Contacto">
                 <Contacto />
             </Route>
-                <Route path="Altas">
-                <Altas />
-            </Route>
+
     </Switch>
 </Router>
 
