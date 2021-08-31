@@ -10,11 +10,13 @@ public class Paciente {
     private Long id;
     private String nhc;
     private String telefono;
+    private String alertas;
 
-    public Paciente(Long id, String nhc, String telefono) {
+    public Paciente(Long id, String nhc, String telefono, String alertas) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
+        this.alertas = alertas;
     }
     public Paciente(){
 
@@ -43,4 +45,8 @@ public class Paciente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getAlertas() {return alertas; }
+
+    public void setAlertas(String alertas)  {this.alertas = alertas; }
 }
