@@ -10,19 +10,11 @@ export const NavigationBar = () => {
         <Menu>
             <img className="logo" src={logo} alt={'LogoApp'} />
             <Link to={"/"}><FaHome className="icon"/>Home</Link>
-<<<<<<< HEAD
-            <Link to={"/login"}><FaUser />Login</Link>
-            <Link to={"/altas"}><FaListAlt />Altas</Link>
-            <Link to={"/pacientes"}><FaListAlt />Pacientes</Link>
-            <Link to={"/notificaciones"}><FaBell />Notificaciones</Link>
-            <Link to={"/contacto"}><FaQuestionCircle />Contacto</Link>
-=======
             <Link to={"/login"}><FaUser  className="icon"/>Login</Link>
             <Link to={"/altas"}><FaListAlt  className="icon"/>Altas</Link>
             <Link to={"/pacientes"}><FaUserMd  className="icon"/>Pacientes</Link>
             <Link to={"/notificaciones"}><FaBell  className="icon"/>Notificaciones</Link>
             <Link to={"/contacto"}><FaQuestionCircle  className="icon"/>Contacto</Link>
->>>>>>> 7ca1f9103459429ca6fd3e7bae0b1cc7397cf593
             <p className="copy"><span>FA-APP © 2021. </span>All rights reserved.</p>
         </Menu>
     )

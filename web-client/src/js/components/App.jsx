@@ -19,17 +19,15 @@ export const App = () => {
             </Route>
             <Route path="/Login">
                 <Login />
-<<<<<<< HEAD:web-client/src/js/components/App.jsx
             </Route>
             <Route path="/Altas">
                 <Altas />
             </Route>
-=======
-            </Route>
+
             <Route path="/Altas">
                 <Altas />
             </Route>
->>>>>>> 7ca1f9103459429ca6fd3e7bae0b1cc7397cf593:web-client/src/js/components/App.js
+
             <Route path="/Pacientes">
                 <Pacientes />
             </Route>
