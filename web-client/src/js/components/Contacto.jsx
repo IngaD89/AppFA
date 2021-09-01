@@ -9,7 +9,7 @@ export const Contacto = () => {
             <NavigationBar/>
 
             <section>
-                <h1>Contáctanos</h1>
+                <h3>Contáctanos</h3>
                 <p>
                     Phone: <Mailto tel='+34-123456789'/><br/>
                     Email: <Mailto

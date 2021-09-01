@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {NavigationBar} from "./NavigationBar";
-import {Home} from "./Home";
+import {Inicio} from "./Inicio";
 import {Login} from "./Login";
 import {Altas} from "./Altas";
 import {Pacientes} from "./Pacientes";
@@ -9,25 +9,19 @@ import {Notificaciones} from "./Notificaciones";
 import {Contacto} from "./Contacto";
 
 
-
 export const App = () => {
     return <Router>
-        <NavigationBar />
+        <NavigationBar/>
         <Switch>
             <Route exact path="/">
-                <Home />
+                <Inicio />
             </Route>
-            <Route path="/Login">
+            <Route path="/Inicio">
                 <Login />
             </Route>
             <Route path="/Altas">
                 <Altas />
             </Route>
-
-            <Route path="/Altas">
-                <Altas />
-            </Route>
-
             <Route path="/Pacientes">
                 <Pacientes />
             </Route>
@@ -37,7 +31,6 @@ export const App = () => {
             <Route path="/Contacto">
                 <Contacto />
             </Route>
-
     </Switch>
 </Router>
 

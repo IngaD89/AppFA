@@ -1,10 +1,16 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
+import {NavigationBar} from "./NavigationBar";
+
 
 export const Altas = () => {
     return (
+        <div>
+            <NavigationBar/>
 
-                <form className="formulario">
+            <section>
+                <h3>Alta Pacientes</h3>
+                <form className="form__alta">
                     <div className="classnumerohistoria">
                         <label>NHC</label>
                         <input
@@ -14,7 +20,7 @@ export const Altas = () => {
                         />
                     </div>
                     <div className="classtelefono">
-                        <label>Telefono</label>
+                        <label>Teléfono</label>
                         <input
                             id="personas"
                             type="texto"
@@ -64,14 +70,44 @@ export const Altas = () => {
                             name="personas"
                         />
                     </div>
+                    <div className="adjuntos">
+                        <h4>Archivos adjuntos</h4>
+                        <div className="checkboxes">
+                            <label>
+                                <input
+                                    name="isGoing"
+                                    type="checkbox"
+                                />
+                                Estudio Daño Miocárdico
+                            </label>
+                        </div>
+                        <div className="checkboxes">
+                            <label>
+                                <input
+                                    name="isGoing"
+                                    type="checkbox"
+                                />
+                                Consentimiento de Datos
+                            </label>
+                        </div>
+                    </div>
 
-                    <div className="actividad">
                     <div>
-                        <button className="boton" >
-                            <Link className="textoboton" to={"./Altas"}>DAR DE ALTA</Link>
-                        </button>
+                        <h4>Archivos</h4>
+                        <div>
+                            <input type="file" />
+                            <button className="btn__adjuntar">Adjuntar archivo</button>
+                        </div>
                     </div>
+
+                    <div className="btn__submit" >
+                        <button type="submit">Submit</button>
                     </div>
+
                 </form>
+
+            </section>
+        </div>
+
     )
 }
