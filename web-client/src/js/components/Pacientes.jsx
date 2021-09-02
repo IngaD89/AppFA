@@ -6,8 +6,6 @@ export const Pacientes = (props) => {
     return (
         <div>
             <section>
-
-
                     <div key={props.pacientes.id}></div>
                     <div>{props.pacientes.nhc}</div>
                     <div>{props.pacientes.telefono}</div>

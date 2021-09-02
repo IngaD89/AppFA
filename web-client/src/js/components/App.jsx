@@ -7,9 +7,22 @@ import {Altas} from "./Altas";
 import {Notificaciones} from "./Notificaciones";
 import {Contacto} from "./Contacto";
 import {PacienteCard} from "./PacienteCard";
+import {useEffect, useState} from "react";
+import {PacientesApi} from "../apis/PacientesApi";
 
 
 export const App = () => {
+
+    const pacientesApi = new PacientesApi();
+    const [pacientes, setPacientes] = useState([])
+
+    useEffect(() => {
+        pacientesApi.getPacientes()
+            .then(setPacientes)
+    }, [])
+
+
+
     return <Router>
         <NavigationBar/>
         <Switch>
@@ -23,7 +36,7 @@ export const App = () => {
                 <Altas />
             </Route>
             <Route path="/Pacientes">
-                <PacienteCard />
+                <PacienteCard pacientes={pacientes}/>
             </Route>
             <Route path="/Notificaciones">
                 <Notificaciones />
