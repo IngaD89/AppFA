@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {NavigationBar} from "./NavigationBar";
+import {Link} from "react-router-dom";
+
 
 
 export const Inicio = () => {
@@ -8,23 +10,29 @@ export const Inicio = () => {
             <NavigationBar/>
 
             <section>
-                <h3>Please Log In</h3>
+                <h3>Iniciar sesión</h3>
 
                 <div className="login-wrapper">
                     <form>
                         <label>
-                            <p>Username</p>
-                            <input type="text"/>
+                            <p>Usuario</p>
+                            <input type="text"
+                                   placeholder="Nombre de usuario o email"
+                                   pattern=""
+                                   required />
                         </label>
                         <label>
-                            <p>Password</p>
-                            <input type="password"/>
+                            <p>Contraseña</p>
+                            <input type="password"
+                                   placeholder="Contraseña"
+                                   pattern=""
+                                   required />
                         </label>
-                        <p>Has olvidado tu contraseña?</p>
-
-
                         <div>
-                            <button type="submit">Submit</button>
+                            <Link to={"/contacto"}>Has olvidado tu contraseña?</Link>
+                        </div>
+                            <div>
+                            <button type="submit">Enviar</button>
                         </div>
                     </form>
                 </div>

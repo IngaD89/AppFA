@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Link} from "react-router-dom";
+
 import {NavigationBar} from "./NavigationBar";
 
 
@@ -11,97 +11,67 @@ export const Altas = () => {
             <section>
                 <h3>Alta Pacientes</h3>
                 <form className="form__alta">
-                    <div className="classnumerohistoria">
+                    <div className="input-wrapper">
                         <label>NHC</label>
-                        <input
-                            id="personas"
-                            type="texto"
-                            name="personas"
-                        />
+                        <input id="nhc" type="texto" name="nhc"
+                               placeholder="Número de Historia Clínica"
+                               pattern=""
+                               required />
                     </div>
-                    <div className="classtelefono">
+                    <div className="input-wrapper">
                         <label>Teléfono</label>
-                        <input
-                            id="personas"
-                            type="texto"
-                            name="personas"
-                        />
-                    </div>
-                    <div className="classprimerallamada">
-                        <label>Primera llamada</label>
-                        <input
-                            id="fecha"
-                            type="date"
-                            name="fecha"
-                        />
-                    </div>
-                    <div className="classsegunda llamada">
-                        <label>Segunda llamada</label>
-                        <input
-                            id="fecha"
-                            type="date"
-                            name="fecha"
-                        />
-                    </div>
+                        <input id="phone" type="texto" name="phone"
+                               placeholder="+34 123456789"
+                               pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
+                               required />
 
-                    <div className="classtrecerallamada">
-                        <label>Tercera llamada</label>
-                        <input
-                            id="fecha"
-                            type="date"
-                            name="fecha"
-                        />
                     </div>
-
-                    <div className="classpruebaesfuerzo">
+                    <div className="input-wrapper">
+                        <label>Primera Llamada</label>
+                        <input id="primera" type="date" name="primera" />
+                    </div>
+                    <div className="input-wrapper">
+                        <label>Segunda Llamada</label>
+                        <input id="segunda" type="date" name="segunda" />
+                    </div>
+                    <div className="input-wrapper">
+                        <label>Tercera Llamada</label>
+                        <input id="tercera" type="date" name="tercera" />
+                    </div>
+                    <div className="input-wrapper">
                         <label>Prueba Esfuerzo</label>
-                        <input
-                            id="personas"
-                            type="text"
-                            name="personas"
-                        />
+                        <input id="prueba" type="date" name="prueba" />
                     </div>
-
-                    <div className="classeco">
+                    <div className="input-wrapper">
                         <label>ECO</label>
-                        <input
-                            id="personas"
-                            type="text"
-                            name="personas"
-                        />
+                        <input id="eco" type="date" name="eco" />
                     </div>
-                    <div className="adjuntos">
+                    <div className="adjuntos-wrapper">
                         <h4>Archivos adjuntos</h4>
-                        <div className="checkboxes">
+                        <div className="checkboxes-wrapper">
                             <label>
-                                <input
-                                    name="isGoing"
-                                    type="checkbox"
-                                />
+                                <input name="edm" type="checkbox" />
                                 Estudio Daño Miocárdico
                             </label>
                         </div>
-                        <div className="checkboxes">
+                        <div className="checkboxes-wrapper">
                             <label>
-                                <input
-                                    name="isGoing"
-                                    type="checkbox"
-                                />
+                                <input name="cDatos" type="checkbox" />
                                 Consentimiento de Datos
                             </label>
                         </div>
                     </div>
 
-                    <div>
-                        <h4>Archivos</h4>
+                    <div className="btn">
+                        <h4>Adjuntar archivos</h4>
                         <div>
                             <input type="file" />
-                            <button className="btn__adjuntar">Adjuntar archivo</button>
+                            <button className="btn__adjuntar">Adjuntar</button>
                         </div>
                     </div>
 
                     <div className="btn__submit" >
-                        <button type="submit">Submit</button>
+                        <button type="submit">Dar de Alta</button>
                     </div>
 
                 </form>
