@@ -1,18 +1,15 @@
 import * as React from "react";
 import {useState} from "react";
-import {Redirect} from "react-router-dom";
+
+import {useHistory} from "react-router-dom";
 
 
 
 
 export const Altas = (props) => {
 
-    const [submitted, setSubmitted] = useState(false);
+    let history = useHistory();
 
-    const [redirect, setRedirect] = useState(false)
-    if (redirect) {
-        return <Redirect to = "/pacientes"/>
-    }
 
     const [datos, setDatos] = useState({
         nhc: '',
@@ -131,7 +128,9 @@ export const Altas = (props) => {
                     </div>
 
                     <div className="btn__submit">
-                        <button type="submit">Dar de Alta</button>
+                        <button onClick={()=> {history.push('/pacientes'); }   }
+
+                                type="submit">Dar de Alta</button>
                     </div>
 
                 </form>
