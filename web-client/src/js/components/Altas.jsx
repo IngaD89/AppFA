@@ -1,11 +1,13 @@
 import * as React from "react";
 import {useState} from "react";
 import {Redirect} from "react-router-dom";
-import {stringify} from "node/querystring";
+
 
 
 
 export const Altas = (props) => {
+
+    const [submitted, setSubmitted] = useState(false);
 
     const [redirect, setRedirect] = useState(false)
     if (redirect) {
@@ -34,11 +36,7 @@ export const Altas = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.onSubmit(stringify(props))
-            .then(_ => setRedirect(true))
-
     }
-
     return (
         <div>
 
