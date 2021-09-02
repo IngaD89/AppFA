@@ -1,14 +1,23 @@
 import * as React from 'react';
-import {NavigationBar} from "./NavigationBar";
 
 
-export const Pacientes = () => {
+
+export const Pacientes = (props) => {
     return (
         <div>
-            <NavigationBar />
-
             <section>
-                <h1>Pacientes with no content yet</h1>
+
+
+                    <div key={props.pacientes.id}></div>
+                    <div>{props.pacientes.nhc}</div>
+                    <div>{props.pacientes.telefono}</div>
+                    <div>{props.pacientes.consentimiento}</div>
+                    <div>{props.pacientes.primeraLlamada}</div>
+                    <div>{props.pacientes.segundaLlamada}</div>
+                    <div>{props.pacientes.terceraLlamada}</div>
+                    <div>{props.pacientes.pruebaEsfuerzo}</div>
+                    <div>{props.pacientes.eco}</div>
+                    <div>{props.pacientes.archivo}</div>
             </section>
         </div>
     )

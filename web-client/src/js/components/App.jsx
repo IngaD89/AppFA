@@ -4,9 +4,9 @@ import {NavigationBar} from "./NavigationBar";
 import {Inicio} from "./Inicio";
 import {Login} from "./Login";
 import {Altas} from "./Altas";
-import {Pacientes} from "./Pacientes";
 import {Notificaciones} from "./Notificaciones";
 import {Contacto} from "./Contacto";
+import {PacienteCard} from "./PacienteCard";
 
 
 export const App = () => {
@@ -23,7 +23,7 @@ export const App = () => {
                 <Altas />
             </Route>
             <Route path="/Pacientes">
-                <Pacientes />
+                <PacienteCard />
             </Route>
             <Route path="/Notificaciones">
                 <Notificaciones />

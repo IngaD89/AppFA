@@ -1,12 +1,25 @@
 import * as React from "react";
+import {useState} from "react";
 
-import {NavigationBar} from "./NavigationBar";
 
 
-export const Altas = () => {
+
+export const Altas = (props) => {
+    const [pacientes, setPacientes] = useState(        {
+        nhc: '',
+        telefono: '',
+        consentimiento: '',
+        primeraLlamada: '',
+        segundaLlamada: '',
+        terceraLlamada: '',
+        pruebaEsfuerzo: '',
+        eco: '',
+        archivo: '',
+
+    })
     return (
         <div>
-            <NavigationBar/>
+
 
             <section>
                 <h3>Alta Pacientes</h3>
