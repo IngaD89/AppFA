@@ -26,7 +26,7 @@ public class PacienteController {
     public Optional<Paciente> findById(@PathVariable Long id) {
         return pacienteRepository.findById(id);
     }
-    @PostMapping("/new")
+    @PostMapping("/Altas")
     public Paciente addPaciente(@RequestBody Paciente paciente) {
         return pacienteRepository.save(paciente);
     }

@@ -1,8 +1,16 @@
 import * as React from "react";
 import {useState} from "react";
+import {Redirect} from "react-router-dom";
+import {stringify} from "node/querystring";
+
 
 
 export const Altas = (props) => {
+
+    const [redirect, setRedirect] = useState(false)
+    if (redirect) {
+        return <Redirect to = "/pacientes"/>
+    }
 
     const [datos, setDatos] = useState({
         nhc: '',
@@ -26,6 +34,9 @@ export const Altas = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        props.onSubmit(stringify(props))
+            .then(_ => setRedirect(true))
+
     }
 
     return (

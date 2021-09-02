@@ -15,11 +15,19 @@ export const App = () => {
 
     const pacientesApi = new PacientesApi();
     const [pacientes, setPacientes] = useState([])
+    const [update, setUpdate] = useState(true)
 
     useEffect(() => {
+        if(update){
         pacientesApi.getPacientes()
             .then(setPacientes)
-    }, [])
+            .then(_=>setUpdate(false))}
+    }, [update])
+
+    const savePacientes = paciente =>
+        pacientesApi.savePacientes(paciente)
+            .then(_=>setUpdate(true))
+
 
 
 
@@ -33,7 +41,7 @@ export const App = () => {
                 <Login />
             </Route>
             <Route path="/Altas">
-                <Altas />
+                <Altas onSubmit={savePacientes}/>
             </Route>
             <Route path="/Pacientes">
                 <PacienteCard pacientes={pacientes}/>
