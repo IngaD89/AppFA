@@ -14,7 +14,9 @@ import {PacientesApi} from "../apis/PacientesApi";
 export const App = () => {
 
     const pacientesApi = new PacientesApi();
+
     const [pacientes, setPacientes] = useState([])
+
     const [update, setUpdate] = useState(true)
 
     useEffect(() => {
@@ -24,9 +26,6 @@ export const App = () => {
             .then(_=>setUpdate(false))}
     }, [update])
 
-    const savePacientes = paciente =>
-        pacientesApi.savePacientes(paciente)
-            .then(_=>setUpdate(true))
 
 
 
@@ -41,7 +40,7 @@ export const App = () => {
                 <Login />
             </Route>
             <Route path="/Altas">
-                <Altas onSubmit={savePacientes}/>
+                <Altas />
             </Route>
             <Route path="/Pacientes">
                 <PacienteCard pacientes={pacientes}/>

@@ -11,6 +11,7 @@ import java.util.Optional;
 
 
 @RestController
+@RequestMapping("/api")
 public class PacienteController {
     private PacienteRepository pacienteRepository;
     @Autowired
@@ -22,7 +23,7 @@ public class PacienteController {
     public List<Paciente> allPacientes(){
         return pacienteRepository.findAll();
     }
-    @GetMapping(value = "/pacientes/{id}")
+    @GetMapping( "/pacientes/{id}")
     public Optional<Paciente> findById(@PathVariable Long id) {
         return pacienteRepository.findById(id);
     }
