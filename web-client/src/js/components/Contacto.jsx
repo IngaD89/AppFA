@@ -6,18 +6,13 @@ import Mailto from 'react-protected-mailto';
 export const Contacto = () => {
     return (
         <div>
-            <NavigationBar/>
-
             <section>
-                <h3>Contáctanos</h3>
-                <p>
-                    Phone: <Mailto tel='+34-123456789'/><br/>
-                    Email: <Mailto
-                    email='contacto@fa-app.com'
-                    headers={
-                        {subject: 'Solicitud de contacto desde FA-APP'}
-                    }/>
-                </p>
+                <h2>Contáctanos</h2>
+                <div className="contacto__wrapper">
+                    <p>Teléfono: <Mailto tel='+34-123456789'/>
+                        Email: <Mailto email='contacto@fa-app.com' headers={{subject: 'Solicitud de contacto desde FA-APP'}} />
+                    </p>
+                </div>
             </section>
         </div>
     )

@@ -1,9 +1,6 @@
 import * as React from "react";
 import {useState} from "react";
-
 import {useHistory} from "react-router-dom";
-
-
 
 
 export const Altas = (props) => {
@@ -38,99 +35,96 @@ export const Altas = (props) => {
         <div>
 
             <section>
-                <h3>Alta Pacientes</h3>
+                <h2>Alta Pacientes</h2>
                 <form className="form__alta"
                       onSubmit={handleSubmit}>
-                    <div className="input-wrapper">
+                    <div className="input__wrapper">
                         <label>NHC</label>
                         <input id="nhc"
-                               type="texto"
+                               type="text"
                                name="nhc"
                                placeholder="Número de Historia Clínica"
-                               /*pattern=""
-                               required*/
-                               onChange={handleInputChange}/>
+                               onChange={handleInputChange} />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input__wrapper">
                         <label>Teléfono</label>
-                        <input id="telefono"
-                               type="texto"
-                               name="telefono"
+                        <input id="tel"
+                               type="text"
+                               name="tel"
                                placeholder="+34 123456789"
-                               pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
-                               required
-                               onChange={handleInputChange}/>
+                               onChange={handleInputChange} />
+                    </div>
 
-                    </div>
-                    <div className="checkboxes-wrapper">
-                        <label>Consentimiento de Datos</label>
-                        <input
-                            id="consentimiento"
-                            name="consentimiento"
-                            type="checkbox"
-                            onChange={handleInputChange}/>
-                    </div>
-                    <div className="input-wrapper">
+                    <div className="input__wrapper">
                         <label>Primera Llamada</label>
                         <input id="primeraLlamada"
                                type="date"
                                name="primeraLlamada"
-                               onChange={handleInputChange}/>
+                               onChange={handleInputChange} />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input__wrapper">
                         <label>Segunda Llamada</label>
                         <input id="segundaLlamada"
                                type="date"
                                name="segundaLlamada"
                                onChange={handleInputChange} />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input__wrapper">
                         <label>Tercera Llamada</label>
                         <input id="terceraLlamada"
                                type="date"
                                name="terceraLlamada"
-                               onChange={handleInputChange}/>
+                               onChange={handleInputChange} />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input__wrapper">
                         <label>Prueba Esfuerzo</label>
                         <input id="pruebaEsfuerzo"
                                type="date"
                                name="pruebaEsfuerzo"
                                onChange={handleInputChange} />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input__wrapper">
                         <label>ECO</label>
                         <input id="eco"
                                type="date"
                                name="eco"
-                               onChange={handleInputChange}/>
+                               onChange={handleInputChange} />
                     </div>
-                    <div className="adjuntos-wrapper">
-                        <h4>Archivos adjuntos</h4>
-                        <div className="checkboxes-wrapper">
-                            <label>adjuntar archivo</label>
-                                <input
-                                    id="archivo"
-                                    name="archivo"
-                                    type="text"
-                                    onChange={handleInputChange}/>
+
+                    <div className="checkboxes">
+                        <div className="checkbox__wrapper">
+                            <label className="checkbox__label">Test Daño Miocardio</label>
+                            <input className="checkbox__input"
+                                   id="consentimiento"
+                                   name="consentimiento"
+                                   type="checkbox"
+                                   onChange={handleInputChange} />
                         </div>
-                        <button className="btn__adjuntar">Adjuntar</button>
-
+                        <div className="checkbox__wrapper">
+                            <label className="checkbox__label">Consentimiento de Datos</label>
+                            <input className="checkbox__input"
+                                id="consentimiento"
+                                name="consentimiento"
+                                type="checkbox"
+                                onChange={handleInputChange}/>
+                        </div>
                     </div>
 
-                    <div className="btn">
-                        <h4>Adjuntar archivos</h4>
+                    <div className="add__files--wrapper">
+                        <h3>Adjuntar archivos</h3>
                         <div>
-                            <input type="file"/>
-                            <button className="btn__adjuntar">Adjuntar</button>
+                            <input className="add__files--input"
+                                   type="file" />
+                            <button className="add__files--btn">Adjuntar</button>
                         </div>
                     </div>
 
                     <div className="btn__submit">
-                        <button onClick={()=> {history.push('/pacientes'); }   }
-
-                                type="submit">Dar de Alta</button>
+                        <input className="btn__submit--input"
+                               type="submit"
+                               value="Dar de Alta"
+                               onClick={()=> {history.push('/pacientes');
+                               }} />
                     </div>
 
                 </form>

@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: #FFF;
 }
+
 html {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ html {
   line-height: 2em;
   text-align: center;
 }
+
 a {
   color: #08693E;
   text-decoration: none;
@@ -25,16 +27,26 @@ a:hover {
   color: #008E4F;
   font-weight: 600;
 }
-
 .icon {
   color: #FF0000;
   margin: 0 15px 0 0;
   font-size: 1.75rem;
 }
 
+
+h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 50px;
+}
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
 p {
   color: #111;
 }
+
 .logo {
   max-width: 200px;
   margin-bottom: 40px;
@@ -53,7 +65,7 @@ p {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #08693E;
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -81,13 +93,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   position: fixed;
   height: 100%;
   top: 0;
-  left:0;
+  left: 0;
 }
 
 /* General sidebar styles */
 .bm-menu {
   background: rgba(255, 255, 255, 1);
-  padding: 3.5em 1.5em 0;
+  padding: 3.5em 1.75em 0;
   font-size: 1.15em;
   text-align: left;
 }
@@ -114,14 +126,133 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 
+/* SECTIONS */
+section {
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+/* FORMS */
+.form__alta {
+  border: thin solid #CCC;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 50px;
+  padding: 40px;
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
+
+}
+.input__wrapper {
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+label, .checkbox__label {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 30px 5px 15px;
+}
+input {
+  padding: 5px 20px 5px 10px;
+  border: thin solid #08693E;
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+input[type="date" i] {
+  color: #777777;
+}
+.checkboxes {
+  margin: 40px 0 30px 0;
+}
+.checkbox__wrapper {
+  display: flex;
+  align-items: center;
+}
+.checkbox__input {
+  padding: 5px 20px;
+  border: thin solid #08693E;
+  border-radius: 15px;
+  box-shadow: none;
+  width: auto;
+  box-sizing: unset;
+}
+.checkbox__label {
+  margin: 10px 20px 5px 15px;
+  width: 60%;
+}
+input[type="checkbox" i] {
+  appearance: auto;
+  border: thin solid #08693E;
+  padding: 10px;
+  color: #08693E;
+}
+.add__files--wrapper {
+  margin-bottom: 70px;
+}
+.add__files--wrapper h4 {
+  margin: 0 30px 10px 15px;
+}
+.add__files--input {
+  margin-right: 10px;
+  padding-left: 10px;
+}
+.add__files--btn {
+  color: #08693E;
+  padding: 8px 30px 8px 30px;
+  border: thin solid #08693E;
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+.btn__submit {
+  margin: 70px 0 30px;
+  text-align: center;
+}
+.btn__submit--input {
+  background-color: transparent;
+  font-weight: 700;
+  color: #08693E;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.1);
+  border: thin solid #08693E;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 8px 70px;
+}
+.btn__submit--input:hover {
+  color: #FFFFFF;
+  border: 2px solid #08693E;
+  background-color: #08693E;
+}
+
+
+/* CONTACTO */
+
+.contacto__wrapper {
+  border: thin solid #CCC;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 40px;
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
+}
+
 
 
 /* FOOTER */
 
 .copy {
-  border-top: thin solid #333;
+  border-top: thin solid #08693E;
   padding-top: 5px;
+  font-size: 0.9rem;
 }
+
 .copy span {
   font-weight: bold;
 }
