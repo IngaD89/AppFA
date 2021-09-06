@@ -1,14 +1,22 @@
 import * as React from "react";
 import {useState} from "react";
-
-import {useHistory} from "react-router-dom";
-
-
+import {PacientesApi} from "../apis/PacientesApi";
+import {Redirect} from "react-router-dom"
 
 
-export const Altas = (props) => {
 
-    let history = useHistory();
+
+export const Altas = () => {
+
+    const pacientesApi = new PacientesApi();
+
+    const[submitted, setSubmitted] = useState(false)
+
+    const savePacientes = () =>
+        pacientesApi.savePacientes()
+            .then(() => setSubmitted(true))
+
+
 
 
     const [datos, setDatos] = useState({
@@ -33,7 +41,13 @@ export const Altas = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+
     }
+
+    if(submitted){
+        return <Redirect to="/pacientes" />
+    }
+
     return (
         <div>
 
@@ -57,8 +71,8 @@ export const Altas = (props) => {
                                type="texto"
                                name="telefono"
                                placeholder="+34 123456789"
-                               pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
-                               required
+                              /* pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
+                               required*/
                                onChange={handleInputChange}/>
 
                     </div>
@@ -128,9 +142,7 @@ export const Altas = (props) => {
                     </div>
 
                     <div className="btn__submit">
-                        <button onClick={()=> {history.push('/pacientes'); }   }
-
-                                type="submit">Dar de Alta</button>
+                        <button onClick={() => savePacientes(datos) } type="submit">Dar de Alta</button>
                     </div>
 
                 </form>
