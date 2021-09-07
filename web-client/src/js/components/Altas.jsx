@@ -1,13 +1,12 @@
 import * as React from "react";
 import {useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
-import {Redirect} from "react-router-dom"
+import {Redirect, useHistory} from "react-router-dom"
 
-export const Altas = (props) => {
 
 
     export const Altas = () => {
-
+        const history = useHistory();
         const pacientesApi = new PacientesApi();
 
         const [submitted, setSubmitted] = useState(false)
@@ -65,22 +64,9 @@ export const Altas = (props) => {
                             <input id="tel"
                                    type="text"
                                    name="tel"
-                                   placeholder="+34 123456789"
-
-                                /* pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
-                                 required*/
+                                   placeholder="+34-123456789"
                                    onChange={handleInputChange}/>
-
                         </div>
-                        <div className="checkboxes-wrapper">
-                            <label>Consentimiento de Datos</label>
-                            <input
-                                id="consentimiento"
-                                name="consentimiento"
-                                type="checkbox"
-                                onChange={handleInputChange}/>
-                        </div>
-
                         <div className="input__wrapper">
                             <label>Primera Llamada</label>
                             <input id="primeraLlamada"
@@ -162,4 +148,3 @@ export const Altas = (props) => {
 
         )
     }
-}
