@@ -2,10 +2,14 @@ package org.factoriaf5.appfa.controllers;
 
 import org.factoriaf5.appfa.models.Paciente;
 import org.factoriaf5.appfa.repositories.PacienteRepository;
+import org.factoriaf5.appfa.services.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +18,9 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class PacienteController {
     private PacienteRepository pacienteRepository;
+    private PacienteService pacienteService;
+
+
     @Autowired
     public PacienteController(PacienteRepository pacienteRepository) {
         this.pacienteRepository = pacienteRepository;
@@ -43,6 +50,15 @@ public class PacienteController {
         assert paciente != null;
         pacienteRepository.save(paciente);
         return ResponseEntity.ok().body(paciente);
+    }
+    @PostMapping("/Altas")
+    public String addPaciente(@ModelAttribute Paciente paciente, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        paciente.setPhoto(fileName);
+        pacienteService.save(paciente);
+        String uploadDir = "paciente-photo/" + paciente.getId();
+        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+        return "redirect:/pacientes";
     }
 
 }
