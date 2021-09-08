@@ -11,7 +11,7 @@ import {useEffect, useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
 
 
-const cards =
+/*const cards =
     {
         id: 1,
         nhc: "123",
@@ -24,9 +24,9 @@ const cards =
         archivo: "SI",
         consentimiento: "SI"
 
-}
+}*/
 
-export function Card() {
+/*export function Card() {
     return (
         <div className="container">
             <div className="row">
@@ -49,7 +49,7 @@ export function Card() {
 
             </div>
         </div>
-    )
+    )*/
 
 
     export const App = () => {
@@ -58,15 +58,11 @@ export function Card() {
 
         const [pacientes, setPacientes] = useState([])
 
-        const [update, setUpdate] = useState(true)
 
         useEffect(() => {
-            if (update) {
                 pacientesApi.getPacientes()
                     .then(setPacientes)
-                    .then(_ => setUpdate(false))
-            }
-        }, [update])
+        }, [])
 
 
         return <Router>
@@ -75,23 +71,23 @@ export function Card() {
                 <Route exact path="/">
                     <Inicio/>
                 </Route>
-                <Route path="/Inicio">
+                <Route path="/inicio">
                     <Login/>
                 </Route>
-                <Route path="/Altas">
+                <Route path="/altas">
                     <Altas/>
                 </Route>
-                <Route path="/Pacientes">
+                <Route path="/pacientes">
                     <PacienteCard pacientes={pacientes}/>
                 </Route>
-                <Route path="/Notificaciones">
+                <Route path="/notificaciones">
                     <Notificaciones/>
                 </Route>
-                <Route path="/Contacto">
+                <Route path="/contacto">
                     <Contacto/>
                 </Route>
             </Switch>
         </Router>
 
-    }
+
 }
