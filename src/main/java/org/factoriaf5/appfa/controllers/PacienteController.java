@@ -51,10 +51,10 @@ public class PacienteController {
         pacienteRepository.save(paciente);
         return ResponseEntity.ok().body(paciente);
     }
-    @PostMapping("/Altas")
+    @PostMapping("/altas")
     public String addPaciente(@ModelAttribute Paciente paciente, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        paciente.setPhoto(fileName);
+        paciente.setArchivo(fileName);
         pacienteService.save(paciente);
         String uploadDir = "paciente-photo/" + paciente.getId();
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
