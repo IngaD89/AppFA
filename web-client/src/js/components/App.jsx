@@ -11,47 +11,87 @@ import {useEffect, useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
 
 
-export const App = () => {
+const cards =
+    {
+        id: 1,
+        nhc: "123",
+        telefono: "+34 123456789",
+        primeraLlamada: "15/09/2021",
+        segundaLlamada: "15/09/2021",
+        terceraLlamada: "15/09/2021",
+        pruebaEsfuerzo: "15/09/2021",
+        eco: "15/09/2021",
+        archivo: "SI",
+        consentimiento: "SI"
 
-    const pacientesApi = new PacientesApi();
+}
 
-    const [pacientes, setPacientes] = useState([])
+export function Card() {
+    return (
+        <div className="container">
+            <div className="row">
+                {
+                    cards.map(card => (
+                        <div className="col-md-5" key={card.id}>
+                            <PacienteCard
+                                nhc={card.nhc}
+                                telefono={card.telefono}
+                                primeraLlamada={card.primeraLlamada}
+                                segundaLlamada={card.segundaLlamada}
+                                terceraLlamada={card.terceraLlamada}
+                                pruebaEsfuerzo={card.pruebaEsfuerzo}
+                                eco={card.eco}
+                                archivo={card.archivo}
+                                consentimiento={card.consentimiento}/>
+                        </div>
+                    ))
+                }
 
-    const [update, setUpdate] = useState(true)
-
-    useEffect(() => {
-        if(update){
-        pacientesApi.getPacientes()
-            .then(setPacientes)
-            .then(_=>setUpdate(false))}
-    }, [update])
+            </div>
+        </div>
+    )
 
 
+    export const App = () => {
+
+        const pacientesApi = new PacientesApi();
+
+        const [pacientes, setPacientes] = useState([])
+
+        const [update, setUpdate] = useState(true)
+
+        useEffect(() => {
+            if (update) {
+                pacientesApi.getPacientes()
+                    .then(setPacientes)
+                    .then(_ => setUpdate(false))
+            }
+        }, [update])
 
 
+        return <Router>
+            <NavigationBar/>
+            <Switch>
+                <Route exact path="/">
+                    <Inicio/>
+                </Route>
+                <Route path="/Inicio">
+                    <Login/>
+                </Route>
+                <Route path="/Altas">
+                    <Altas/>
+                </Route>
+                <Route path="/Pacientes">
+                    <PacienteCard pacientes={pacientes}/>
+                </Route>
+                <Route path="/Notificaciones">
+                    <Notificaciones/>
+                </Route>
+                <Route path="/Contacto">
+                    <Contacto/>
+                </Route>
+            </Switch>
+        </Router>
 
-    return <Router>
-        <NavigationBar/>
-        <Switch>
-            <Route exact path="/">
-                <Inicio />
-            </Route>
-            <Route path="/Inicio">
-                <Login />
-            </Route>
-            <Route path="/Altas">
-                <Altas />
-            </Route>
-            <Route path="/Pacientes">
-                <PacienteCard pacientes={pacientes}/>
-            </Route>
-            <Route path="/Notificaciones">
-                <Notificaciones />
-            </Route>
-            <Route path="/Contacto">
-                <Contacto />
-            </Route>
-    </Switch>
-</Router>
-
+    }
 }
