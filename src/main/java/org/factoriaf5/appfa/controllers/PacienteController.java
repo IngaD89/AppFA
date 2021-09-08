@@ -11,7 +11,6 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/api")
 public class PacienteController {
     private PacienteRepository pacienteRepository;
     @Autowired
@@ -27,7 +26,7 @@ public class PacienteController {
     public Optional<Paciente> findById(@PathVariable Long id) {
         return pacienteRepository.findById(id);
     }
-    @PostMapping("/Altas")
+    @PostMapping("/altas")
     public Paciente addPaciente(@RequestBody Paciente paciente) {
         return pacienteRepository.save(paciente);
     }
