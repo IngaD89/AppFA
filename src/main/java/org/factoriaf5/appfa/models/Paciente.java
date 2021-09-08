@@ -10,25 +10,29 @@ public class Paciente {
     private Long id;
     private String nhc;
     private String telefono;
-    private String consentimiento;
     private String primeraLlamada;
     private String segundaLlamada;
     private String terceraLlamada;
     private String pruebaEsfuerzo;
     private String eco;
+    private String miocardio;
+    private String consentimiento;
     private String archivo;
 
     public Paciente(Long id, String nhc, String telefono, String consentimiento, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
-        this.consentimiento = consentimiento;
         this.primeraLlamada = primeraLlamada;
         this.segundaLlamada = segundaLlamada;
         this.terceraLlamada = terceraLlamada;
         this.pruebaEsfuerzo = pruebaEsfuerzo;
         this.eco = eco;
+        this.miocardio = miocardio;
+        this.consentimiento = consentimiento;
         this.archivo = archivo;
+
+
     }
     public Paciente(){
 
@@ -107,6 +111,15 @@ public class Paciente {
         this.eco = eco;
     }
 
+    public String getMiocardio() {
+        return miocardio;
+    }
+
+    public void setMiocardio(String archivo) {
+        this.miocardio = miocardio;
+    }
+
+
     public String getArchivo() {
         return archivo;
     }
@@ -114,4 +127,19 @@ public class Paciente {
     public void setArchivo(String archivo) {
         this.archivo = archivo;
     }
+
+
+  /*     return fileName;
+    public void setPhoto(String fileName) {
+    }
+
+    public String getFileName() {
+
+        public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+    public String getPhotoImagePath() {
+        if (photo == null || id == null) return null;
+        return "/game-photo/" + id + "/" + photo;
+    }*/
 }
