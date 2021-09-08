@@ -5,9 +5,10 @@ export const PacienteCard = (props) =>(
 
 
     <section>
-        {props.pacientes.map(paciente => <Pacientes pacientes = {paciente}/>)}
+        {props.pacientes.map(paciente => <Pacientes pacientes = {paciente} key={props.pacientes.id}/>)}
         </section>
 
         )
+
 
 
