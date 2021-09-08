@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name="pacientes")
 public class Paciente {
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String nhc;
     private String telefono;
@@ -19,7 +19,7 @@ public class Paciente {
     private String consentimiento;
     private String archivo;
 
-    public Paciente(Long id, String nhc, String telefono, String consentimiento, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, String archivo) {
+    public Paciente(Long id, String nhc, String telefono, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, String miocardio, String consentimiento, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
@@ -128,6 +128,23 @@ public class Paciente {
         this.archivo = archivo;
     }
 
+    @Override
+    public String toString() {
+        return "Paciente{" +
+                "id=" + id +
+                ", nhc='" + nhc + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", primeraLLamada='" + primeraLlamada + '\'' +
+                ", segundaLLamada='" + segundaLlamada + '\'' +
+                ", terceraLLamada='" + terceraLlamada + '\'' +
+                ", pruebaEsfuerzo='" + pruebaEsfuerzo + '\'' +
+                ", eco='" + eco + '\'' +
+                ", miocardio='" + miocardio + '\'' +
+                ", consentimiento='" + consentimiento + '\'' +
+                ", archivo='" + archivo + '\'' +
+                '}';
+    }
+
 
   /*     return fileName;
     public void setPhoto(String fileName) {
@@ -137,9 +154,9 @@ public class Paciente {
 
         public void setFileName(String fileName) {
         this.fileName = fileName;
-    }
-    public String getPhotoImagePath() {
-        if (photo == null || id == null) return null;
-        return "/game-photo/" + id + "/" + photo;
     }*/
+    public String getPhotoImagePath() {
+        if (archivo == null || id == null) return null;
+        return "/paciente-photo/" + id + "/" + archivo;
+    }
 }
