@@ -35,6 +35,7 @@ public class PacienteController {
     }
     @PostMapping("/altas")
     public Paciente addPaciente(@RequestBody Paciente paciente) {
+
         return pacienteRepository.save(paciente);
     }
     @DeleteMapping("/pacientes/{id}")

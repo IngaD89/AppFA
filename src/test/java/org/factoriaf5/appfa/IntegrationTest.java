@@ -35,8 +35,8 @@ public class IntegrationTest {
     @Test
     public void devuelveListaDePacientes() throws Exception{
         List<Paciente> pacientes = List.of(
-                new Paciente (1L, "403998", "646474723", "SI", "14/12/2022", "16/12/2022", "27/12/2022", "14/12/2023", "14/12/2022", "archivo.jpg"),
-                new Paciente(2L, "503998", "546474723", "NO", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", "archivo.png")
+                new Paciente (1L, "403998", "646474723", "14/12/2022", "16/12/2022", "27/12/2022", "14/12/2023", "14/12/2022", "archivo.jpg", "SI", "archivo.jpg"),
+                new Paciente(2L, "503998", "546474723", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", "archivo.png", "NO", "archivo.png")
         );
         pacienteRepository.saveAll(pacientes);
         mockMvc.perform(get("/pacientes"))
