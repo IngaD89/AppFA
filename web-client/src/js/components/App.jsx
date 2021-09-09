@@ -11,58 +11,29 @@ import {useEffect, useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
 
 
-/*const cards =
-    {
-        id: 1,
-        nhc: "123",
-        telefono: "+34 123456789",
-        primeraLlamada: "15/09/2021",
-        segundaLlamada: "15/09/2021",
-        terceraLlamada: "15/09/2021",
-        pruebaEsfuerzo: "15/09/2021",
-        eco: "15/09/2021",
-        archivo: "SI",
-        consentimiento: "SI"
 
-}*/
+export const App = () => {
 
-/*export function Card() {
-    return (
-        <div className="container">
-            <div className="row">
-                {
-                    cards.map(card => (
-                        <div className="col-md-5" key={card.id}>
-                            <PacienteCard
-                                nhc={card.nhc}
-                                telefono={card.telefono}
-                                primeraLlamada={card.primeraLlamada}
-                                segundaLlamada={card.segundaLlamada}
-                                terceraLlamada={card.terceraLlamada}
-                                pruebaEsfuerzo={card.pruebaEsfuerzo}
-                                eco={card.eco}
-                                archivo={card.archivo}
-                                consentimiento={card.consentimiento}/>
-                        </div>
-                    ))
-                }
+    const pacientesApi = new PacientesApi();
 
-            </div>
-        </div>
-    )*/
+    const [pacientes, setPacientes] = useState([]);
+
+    const [necesitoActualizar, setNecesitoActualizar] = useState(true)
 
 
-    export const App = () => {
+    // a´rreglar :^actualizar cuando se crea
+    useEffect(() => {
+        if(necesitoActualizar) {
+            pacientesApi.getPacientes()
+                .then(setPacientes)
+                .then(_ => setNecesitoActualizar(false))
+        }
+    }, [necesitoActualizar])
 
-        const pacientesApi = new PacientesApi();
 
-        const [pacientes, setPacientes] = useState([])
-
-
-        useEffect(() => {
-                pacientesApi.getPacientes()
-                    .then(setPacientes)
-        }, [])
+    const cuandoTermines = () => {
+      setNecesitoActualizar(true)
+    }
 
 
         return <Router>
@@ -75,9 +46,11 @@ import {PacientesApi} from "../apis/PacientesApi";
                     <Login/>
                 </Route>
                 <Route path="/altas">
-                    <Altas/>
+
+                    <Altas cuandoTermines={cuandoTermines}/>
                 </Route>
-                <Route path="/pacientes">
+                <Route exact path="/pacientes">
+
                     <PacienteCard pacientes={pacientes}/>
                 </Route>
                 <Route path="/notificaciones">

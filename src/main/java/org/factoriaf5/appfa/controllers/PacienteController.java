@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-
+@CrossOrigin
 @RestController
 public class PacienteController {
     private PacienteRepository pacienteRepository;
@@ -34,13 +34,13 @@ public class PacienteController {
         return pacienteRepository.findById(id);
     }
     @PostMapping("/altas")
-
     public Paciente addPaciente(@RequestBody Paciente paciente, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         paciente.setArchivo(fileName);
         pacienteService.save(paciente);
         String uploadDir = "paciente-photo/" + paciente.getId();
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+
         return pacienteRepository.save(paciente);
     }
     @DeleteMapping("/pacientes/{id}")
@@ -49,7 +49,7 @@ public class PacienteController {
         pacienteRepository.deleteById(id);
         return ResponseEntity.ok().body(paciente);
     }
-    @PutMapping("/pacientes/edit/{id}")
+    @PutMapping("/altas/edit/{id}")
     public ResponseEntity<Paciente> edit(@PathVariable Long id) {
         Paciente paciente = pacienteRepository.findById(id).orElse(null);
         assert paciente != null;
