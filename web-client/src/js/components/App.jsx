@@ -15,43 +15,49 @@ export const App = () => {
 
     const pacientesApi = new PacientesApi();
 
-    const [pacientes, setPacientes] = useState([])
+    const [pacientes, setPacientes] = useState([]);
 
-    const [update, setUpdate] = useState(true)
+    const [necesitoActualizar, setNecesitoActualizar] = useState(true)
 
+
+    // a´rreglar :^actualizar cuando se crea
     useEffect(() => {
-        if(update){
-        pacientesApi.getPacientes()
-            .then(setPacientes)
-            .then(_=>setUpdate(false))}
-    }, [update])
+        if(necesitoActualizar) {
+            pacientesApi.getPacientes()
+                .then(setPacientes)
+                .then(_ => setNecesitoActualizar(false))
+        }
+    }, [necesitoActualizar])
 
 
+    const cuandoTermines = () => {
+      setNecesitoActualizar(true)
+    }
 
 
+        return <Router>
+            <NavigationBar/>
+            <Switch>
+                <Route exact path="/">
+                    <Inicio/>
+                </Route>
+                <Route path="/inicio">
+                    <Login/>
+                </Route>
+                <Route path="/altas">
+                    <Altas cuandoTermines={cuandoTermines}/>
+                </Route>
+                <Route exact path="/pacientes">
+                    <PacienteCard pacientes={pacientes}/>
+                </Route>
+                <Route path="/notificaciones">
+                    <Notificaciones/>
+                </Route>
+                <Route path="/contacto">
+                    <Contacto/>
+                </Route>
+            </Switch>
+        </Router>
 
-    return <Router>
-        <NavigationBar/>
-        <Switch>
-            <Route exact path="/">
-                <Inicio />
-            </Route>
-            <Route path="/Inicio">
-                <Login />
-            </Route>
-            <Route path="/Altas">
-                <Altas />
-            </Route>
-            <Route path="/Pacientes">
-                <PacienteCard pacientes={pacientes}/>
-            </Route>
-            <Route path="/Notificaciones">
-                <Notificaciones />
-            </Route>
-            <Route path="/Contacto">
-                <Contacto />
-            </Route>
-    </Switch>
-</Router>
 
 }

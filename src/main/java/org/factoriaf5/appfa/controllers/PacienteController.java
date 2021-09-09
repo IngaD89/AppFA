@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
+@CrossOrigin
 @RestController
-@RequestMapping("/api")
 public class PacienteController {
     private PacienteRepository pacienteRepository;
     @Autowired
@@ -27,7 +26,7 @@ public class PacienteController {
     public Optional<Paciente> findById(@PathVariable Long id) {
         return pacienteRepository.findById(id);
     }
-    @PostMapping("/Altas")
+    @PostMapping("/altas")
     public Paciente addPaciente(@RequestBody Paciente paciente) {
         return pacienteRepository.save(paciente);
     }
@@ -37,7 +36,7 @@ public class PacienteController {
         pacienteRepository.deleteById(id);
         return ResponseEntity.ok().body(paciente);
     }
-    @PutMapping("/pacientes/edit/{id}")
+    @PutMapping("/altas/edit/{id}")
     public ResponseEntity<Paciente> edit(@PathVariable Long id) {
         Paciente paciente = pacienteRepository.findById(id).orElse(null);
         assert paciente != null;

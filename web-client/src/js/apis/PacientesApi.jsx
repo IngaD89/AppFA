@@ -1,17 +1,17 @@
 export class PacientesApi {
 
-    savePacientes(paciente) {
-        return fetch("/Altas",{
+    savePaciente(paciente) {
+        return fetch("http://localhost:8080/altas",{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: paciente
+            body: JSON.stringify(paciente)
 
         })
     }
 
     // hace una llamada al backend y convierte el resultado en un JSON
     getPacientes() {
-        return fetch("/pacientes")
+        return fetch("http://localhost:8080/pacientes")
             .then(response => response.json())
     }
 }
