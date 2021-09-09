@@ -8,7 +8,17 @@ export const Altas = (props) => {
 
 
     const [datos, setDatos] = useState({
-        nhc: ''
+        nhc: '',
+        telefono: '',
+        primeraLlamada: '',
+        segundaLlamada: '',
+        terceraLlamada: '',
+        pruebaEsfuerzo: '',
+        eco: '',
+        miocardio: '',
+        consentimiento: '',
+        archivo: ''
+
     })
 
     const [enviado, setEnviado] = useState(false)
@@ -62,14 +72,7 @@ export const Altas = (props) => {
                                onChange={handleInputChange}/>
 
                     </div>
-                    <div className="checkboxes-wrapper">
-                        <label>Consentimiento de Datos</label>
-                        <input
-                            id="consentimiento"
-                            name="consentimiento"
-                            type="checkbox"
-                            onChange={handleInputChange}/>
-                    </div>
+
 
                     <div className="input__wrapper">
                         <label>Primera Llamada</label>
@@ -111,19 +114,27 @@ export const Altas = (props) => {
                         <div className="checkbox__wrapper">
                             <label className="checkbox__label">Test Daño Miocardio</label>
                             <input className="checkbox__input"
-                                   id="consentimiento"
-                                   name="consentimiento"
+                                   id="miocardio"
+                                   name="miocardio"
                                    type="checkbox"
 
                                    onChange={handleInputChange}/>
                         </div>
                         <div className="checkbox__wrapper">
-                            <label className="checkbox__label">Consentimiento de Datos</label>
+                            <label className="checkbox__label">Consentimiento Informado</label>
                             <input className="checkbox__input"
                                    id="consentimiento"
                                    name="consentimiento"
                                    type="checkbox"
                                    onChange={handleInputChange}/>
+                        </div>
+                        <div className="checkboxes-wrapper">
+                            <label>Archivos</label>
+                            <input
+                                id="archivos"
+                                name="archivos"
+                                type="file"
+                                onChange={handleInputChange}/>
                         </div>
                     </div>
 
