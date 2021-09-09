@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
-import {Redirect} from "react-router-dom"
+import {Redirect, useHistory} from "react-router-dom"
 
 
 export const Altas = (props) => {
@@ -12,6 +12,7 @@ export const Altas = (props) => {
     })
 
     const [enviado, setEnviado] = useState(false)
+
 
     const handleInputChange = (event) => {
         setDatos({
@@ -28,6 +29,7 @@ export const Altas = (props) => {
         api.savePaciente(datos)
             .then(() => setEnviado(true))
             .then(props.cuandoTermines)
+
 
     }
 
@@ -112,6 +114,7 @@ export const Altas = (props) => {
                                    id="consentimiento"
                                    name="consentimiento"
                                    type="checkbox"
+
                                    onChange={handleInputChange}/>
                         </div>
                         <div className="checkbox__wrapper">
@@ -139,5 +142,4 @@ export const Altas = (props) => {
         </div>
 
     )
-
 }

@@ -1,10 +1,14 @@
+import React, { useState }  from 'react'
+
 export class PacientesApi {
+
 
     savePaciente(paciente) {
         return fetch("http://localhost:8080/altas",{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(paciente)
+
 
         })
     }

@@ -11,6 +11,7 @@ import {useEffect, useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
 
 
+
 export const App = () => {
 
     const pacientesApi = new PacientesApi();
@@ -45,9 +46,11 @@ export const App = () => {
                     <Login/>
                 </Route>
                 <Route path="/altas">
+
                     <Altas cuandoTermines={cuandoTermines}/>
                 </Route>
                 <Route exact path="/pacientes">
+
                     <PacienteCard pacientes={pacientes}/>
                 </Route>
                 <Route path="/notificaciones">
