@@ -34,7 +34,12 @@ public class PacienteController {
         return pacienteRepository.findById(id);
     }
     @PostMapping("/altas")
-    public Paciente addPaciente(@RequestBody Paciente paciente) {
+    public Paciente addPaciente(@RequestBody Paciente paciente, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        paciente.setArchivo(fileName);
+        pacienteService.save(paciente);
+        String uploadDir = "paciente-photo/" + paciente.getId();
+        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         return pacienteRepository.save(paciente);
     }
     @DeleteMapping("/pacientes/{id}")
@@ -50,7 +55,7 @@ public class PacienteController {
         pacienteRepository.save(paciente);
         return ResponseEntity.ok().body(paciente);
     }
-    @PostMapping("/altas")
+    /*@PostMapping("/altas")
     public String addPaciente(@ModelAttribute Paciente paciente, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         paciente.setArchivo(fileName);
@@ -58,6 +63,6 @@ public class PacienteController {
         String uploadDir = "paciente-photo/" + paciente.getId();
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         return "redirect:/pacientes";
-    }
+    }*/
 
 }
