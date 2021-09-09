@@ -34,6 +34,7 @@ public class PacienteController {
         return pacienteRepository.findById(id);
     }
     @PostMapping("/altas")
+
     public Paciente addPaciente(@RequestBody Paciente paciente, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         paciente.setArchivo(fileName);
