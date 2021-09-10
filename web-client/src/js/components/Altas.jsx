@@ -117,7 +117,6 @@ export const Altas = (props) => {
                                    id="miocardio"
                                    name="miocardio"
                                    type="checkbox"
-
                                    onChange={handleInputChange}/>
                         </div>
                         <div className="checkbox__wrapper">

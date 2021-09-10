@@ -33,13 +33,13 @@ public class PacienteController {
     public Optional<Paciente> findById(@PathVariable Long id) {
         return pacienteRepository.findById(id);
     }
-    @PostMapping("/altas")
-    public Paciente addPaciente(@RequestBody Paciente paciente, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+    @PostMapping("/pacientes")
+    public Paciente addPaciente(@RequestBody Paciente paciente){/*, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         paciente.setArchivo(fileName);
         pacienteService.save(paciente);
         String uploadDir = "paciente-photo/" + paciente.getId();
-        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);*/
 
         return pacienteRepository.save(paciente);
     }

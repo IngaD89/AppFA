@@ -15,11 +15,11 @@ public class Paciente {
     private String terceraLlamada;
     private String pruebaEsfuerzo;
     private String eco;
-    private String miocardio;
-    private String consentimiento;
+    private Boolean miocardio;
+    private Boolean consentimiento;
     private String archivo;
 
-    public Paciente(Long id, String nhc, String telefono, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, String miocardio, String consentimiento, String archivo) {
+    public Paciente(Long id, String nhc, String telefono, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, Boolean miocardio, Boolean consentimiento, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
@@ -63,11 +63,11 @@ public class Paciente {
     }
 
 
-    public String getConsentimiento() {
+    public Boolean getConsentimiento() {
         return consentimiento;
     }
 
-    public void setConsentimiento(String consentimiento) {
+    public void setConsentimiento(Boolean consentimiento) {
         this.consentimiento = consentimiento;
     }
 
@@ -111,11 +111,11 @@ public class Paciente {
         this.eco = eco;
     }
 
-    public String getMiocardio() {
+    public Boolean getMiocardio() {
         return miocardio;
     }
 
-    public void setMiocardio(String archivo) {
+    public void setMiocardio(Boolean archivo) {
         this.miocardio = miocardio;
     }
 
