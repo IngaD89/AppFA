@@ -15,11 +15,11 @@ public class Paciente {
     private String terceraLlamada;
     private String pruebaEsfuerzo;
     private String eco;
-    private Boolean miocardio;
-    private Boolean consentimiento;
+    private boolean miocardio;
+    private boolean consentimiento;
     private String archivo;
 
-    public Paciente(Long id, String nhc, String telefono, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, Boolean miocardio, Boolean consentimiento, String archivo) {
+    public Paciente(Long id, String nhc, String telefono, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, boolean miocardio, boolean consentimiento, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
@@ -63,11 +63,11 @@ public class Paciente {
     }
 
 
-    public Boolean getConsentimiento() {
+    public boolean getConsentimiento() {
         return consentimiento;
     }
 
-    public void setConsentimiento(Boolean consentimiento) {
+    public void setConsentimiento(boolean consentimiento) {
         this.consentimiento = consentimiento;
     }
 
@@ -111,11 +111,11 @@ public class Paciente {
         this.eco = eco;
     }
 
-    public Boolean getMiocardio() {
+    public boolean getMiocardio() {
         return miocardio;
     }
 
-    public void setMiocardio(Boolean archivo) {
+    public void setMiocardio(boolean miocardio) {
         this.miocardio = miocardio;
     }
 
@@ -139,8 +139,7 @@ public class Paciente {
                 ", terceraLLamada='" + terceraLlamada + '\'' +
                 ", pruebaEsfuerzo='" + pruebaEsfuerzo + '\'' +
                 ", eco='" + eco + '\'' +
-                ", miocardio='" + miocardio + '\'' +
-                ", consentimiento='" + consentimiento + '\'' +
+
                 ", archivo='" + archivo + '\'' +
                 '}';
     }
