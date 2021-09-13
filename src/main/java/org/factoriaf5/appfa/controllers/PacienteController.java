@@ -1,6 +1,8 @@
 package org.factoriaf5.appfa.controllers;
 
+import org.factoriaf5.appfa.models.Alert;
 import org.factoriaf5.appfa.models.Paciente;
+import org.factoriaf5.appfa.repositories.AlertRepository;
 import org.factoriaf5.appfa.repositories.PacienteRepository;
 import org.factoriaf5.appfa.services.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +19,15 @@ import java.util.Optional;
 @RestController
 public class PacienteController {
     private PacienteRepository pacienteRepository;
+    private AlertRepository alertRepository;
     private PacienteService pacienteService;
 
 
     @Autowired
-    public PacienteController(PacienteRepository pacienteRepository) {
+    public PacienteController(PacienteRepository pacienteRepository,
+                              AlertRepository alertRepository) {
         this.pacienteRepository = pacienteRepository;
+        this.alertRepository = alertRepository;
     }
 
     @GetMapping("/pacientes")
@@ -33,13 +38,20 @@ public class PacienteController {
     public Optional<Paciente> findById(@PathVariable Long id) {
         return pacienteRepository.findById(id);
     }
+
+
     @PostMapping("/pacientes")
-    public Paciente addPaciente(@RequestBody Paciente paciente){/*, @RequestParam("image") MultipartFile multipartFile) throws IOException {
-        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        paciente.setArchivo(fileName);
-        pacienteService.save(paciente);
-        String uploadDir = "paciente-photo/" + paciente.getId();
-        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);*/
+    public Paciente addPaciente(@RequestBody Paciente paciente){
+
+        if (paciente.getFechaRegistro() != null) {
+            List<Alert> alertasDelPaciente = List.of(
+                    new Alert(paciente.getFechaRegistro().plusMonths(1)),
+                    new Alert(paciente.getFechaRegistro().plusMonths(3)),
+                    new Alert(paciente.getFechaRegistro().plusYears(1))
+            );
+
+            alertRepository.saveAll(alertasDelPaciente);
+        }
 
         return pacienteRepository.save(paciente);
     }
