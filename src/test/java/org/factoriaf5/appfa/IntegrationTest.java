@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import java.util.List;
 
@@ -14,12 +15,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-
 public class IntegrationTest {
 
     @Autowired
@@ -62,7 +63,26 @@ public class IntegrationTest {
                 .andExpect(jsonPath("$[1].consentimiento", equalTo(true)))
                 .andExpect(jsonPath("$[1].miocardio", equalTo(false)))
                 .andExpect(jsonPath("$[1].archivo", equalTo("archivo.png")));
+    }
 
+    @Test
+    public void creaAlertasAutomaticamenteParaUnPaciente() throws Exception {
+
+        // cuando creamos un paciente
+        mockMvc.perform(post("/pacientes").contentType(MediaType.APPLICATION_JSON)
+                .content("{ \"fechaRegistro\": \"2022-03-04T10:15:30\" }"))
+                .andExpect(status().isOk());
+
+
+        // se crean automáticamente las alertas
+        mockMvc.perform(get("/alerts"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[*]", hasSize(3)))
+                .andExpect(jsonPath("$[0].dateTime", equalTo("2022-04-04T10:15:30")))
+                .andExpect(jsonPath("$[1].dateTime", equalTo("2022-06-04T10:15:30")))
+                .andExpect(jsonPath("$[2].dateTime", equalTo("2023-03-04T10:15:30")));
 
     }
+
+
 }

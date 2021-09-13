@@ -3,12 +3,14 @@ package org.factoriaf5.appfa.config;
 import org.factoriaf5.appfa.models.Paciente;
 import org.factoriaf5.appfa.repositories.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Component
+@Profile("local")
 public class FakeDataLoader {
 
     private PacienteRepository pacienteRepository;
