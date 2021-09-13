@@ -1,7 +1,8 @@
 import * as React from "react";
 import {useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
-import {Redirect, useHistory} from "react-router-dom"
+import {Redirect} from "react-router-dom"
+import logo__section from "./assets/img/FA-APP-logo.svg";
 
 
 export const Altas = (props) => {
@@ -49,8 +50,9 @@ export const Altas = (props) => {
         <div>
 
             <section>
-                <h2>Alta Pacientes</h2>
+                <img className="logo__section" src={logo__section} alt={'LogoApp'} />
                 <form className="form__alta" onSubmit={handleSubmit}>
+                    <h2 className="form__inicio--title">Alta Pacientes</h2>
                     <div className="input__wrapper">
                         <label>NHC</label>
                         <input id="nhc"
@@ -127,9 +129,9 @@ export const Altas = (props) => {
                                    type="checkbox"
                                    onChange={handleInputChange}/>
                         </div>
-                        <div className="checkboxes-wrapper">
+                        <div className="add__files--wrapper">
                             <label>Archivos</label>
-                            <input
+                            <input className="add__files--input"
                                 id="archivos"
                                 name="archivos"
                                 type="file"

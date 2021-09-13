@@ -8,14 +8,18 @@ import {FaHome, FaUserMd, FaListAlt, FaBell, FaQuestionCircle, FaUsers} from 're
 export const NavigationBar = () => {
     return (
         <Menu>
-            <img className="logo" src={logo} alt={'LogoApp'} />
-            <Link to={"/"}><FaHome className="icon"/>Inicio</Link>
+            <div className="logo__wrapper">
+                <img className="logo" src={logo} alt={'LogoApp'} />
+            </div>
+            <Link className="list__item" to={"/"}><FaHome className="icon"/>Inicio</Link>
             <Link to={"/login"}><FaUserMd className="icon"/>Login</Link>
             <Link to={"/altas"}><FaListAlt className="icon"/>Altas</Link>
             <Link to={"/pacientes"}><FaUsers className="icon"/>Pacientes</Link>
             <Link to={"/notificaciones"}><FaBell className="icon"/>Notificaciones</Link>
             <Link to={"/contacto"}><FaQuestionCircle className="icon"/>Contacto</Link>
-            <p className="copy"><span>FA-APP © 2021. </span>All rights reserved.</p>
+            <div className="footer">
+                <p className="copy"><span>FA-APP © 2021. </span>All rights reserved.</p>
+            </div>
         </Menu>
     )
 }
