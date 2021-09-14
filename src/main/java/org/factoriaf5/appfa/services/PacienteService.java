@@ -1,6 +1,5 @@
 package org.factoriaf5.appfa.services;
 
-
 import org.factoriaf5.appfa.models.Paciente;
 import org.factoriaf5.appfa.repositories.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,7 @@ public class PacienteService {
         List<Paciente> allPacientes = (List<Paciente>) pacienteRepository.findAll();
     return allPacientes;
     }
+
     public void save(Paciente paciente) {
     pacienteRepository.save(paciente);
     }

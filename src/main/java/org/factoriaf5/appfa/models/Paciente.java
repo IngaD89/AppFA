@@ -11,39 +11,30 @@ public class Paciente {
     private Long id;
     private String nhc;
     private String telefono;
-    private String primeraLlamada;
-    private String segundaLlamada;
-    private String terceraLlamada;
-    private String pruebaEsfuerzo;
-    private String eco;
     private boolean miocardio;
     private boolean consentimiento;
     private String archivo;
-    private LocalDateTime fechaRegistro;
+    @ManyToOne
+    @JoinColumn(name = "alerts_id")
 
-    public Paciente(Long id, String nhc, String telefono, String primeraLlamada, String segundaLlamada, String terceraLlamada, String pruebaEsfuerzo, String eco, boolean miocardio, boolean consentimiento, String archivo) {
+    private Alert alert;
+
+
+    public Paciente(Long id, String nhc, String telefono, boolean miocardio, boolean consentimiento, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
-        this.primeraLlamada = primeraLlamada;
-        this.segundaLlamada = segundaLlamada;
-        this.terceraLlamada = terceraLlamada;
-        this.pruebaEsfuerzo = pruebaEsfuerzo;
-        this.eco = eco;
         this.miocardio = miocardio;
         this.consentimiento = consentimiento;
         this.archivo = archivo;
-
-
     }
+
     public Paciente(){
-
     }
+
     public void setId(Long id) {
         this.id = id;
     }
-
-
     public Long getId() {
         return id;
     }
@@ -51,7 +42,6 @@ public class Paciente {
     public String getNhc() {
         return nhc;
     }
-
     public void setNhc(String nhc) {
         this.nhc = nhc;
     }
@@ -59,64 +49,20 @@ public class Paciente {
     public String getTelefono() {
         return telefono;
     }
-
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-
     public boolean getConsentimiento() {
         return consentimiento;
     }
-
     public void setConsentimiento(boolean consentimiento) {
         this.consentimiento = consentimiento;
-    }
-
-    public String getPrimeraLlamada() {
-        return primeraLlamada;
-    }
-
-    public void setPrimeraLlamada(String primeraLlamada) {
-        this.primeraLlamada = primeraLlamada;
-    }
-
-    public String getSegundaLlamada() {
-        return segundaLlamada;
-    }
-
-    public void setSegundaLlamada(String segundaLlamada) {
-        this.segundaLlamada = segundaLlamada;
-    }
-
-    public String getTerceraLlamada() {
-        return terceraLlamada;
-    }
-
-    public void setTerceraLlamada(String terceraLlamada) {
-        this.terceraLlamada = terceraLlamada;
-    }
-
-    public String getPruebaEsfuerzo() {
-        return pruebaEsfuerzo;
-    }
-
-    public void setPruebaEsfuerzo(String pruebaEsfuerzo) {
-        this.pruebaEsfuerzo = pruebaEsfuerzo;
-    }
-
-    public String getEco() {
-        return eco;
-    }
-
-    public void setEco(String eco) {
-        this.eco = eco;
     }
 
     public boolean getMiocardio() {
         return miocardio;
     }
-
     public void setMiocardio(boolean miocardio) {
         this.miocardio = miocardio;
     }
@@ -125,7 +71,6 @@ public class Paciente {
     public String getArchivo() {
         return archivo;
     }
-
     public void setArchivo(String archivo) {
         this.archivo = archivo;
     }
@@ -136,16 +81,9 @@ public class Paciente {
                 "id=" + id +
                 ", nhc='" + nhc + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", primeraLLamada='" + primeraLlamada + '\'' +
-                ", segundaLLamada='" + segundaLlamada + '\'' +
-                ", terceraLLamada='" + terceraLlamada + '\'' +
-                ", pruebaEsfuerzo='" + pruebaEsfuerzo + '\'' +
-                ", eco='" + eco + '\'' +
-
                 ", archivo='" + archivo + '\'' +
                 '}';
     }
-
 
   /*     return fileName;
     public void setPhoto(String fileName) {
@@ -156,16 +94,19 @@ public class Paciente {
         public void setFileName(String fileName) {
         this.fileName = fileName;
     }*/
+
     public String getPhotoImagePath() {
         if (archivo == null || id == null) return null;
         return "/paciente-photo/" + id + "/" + archivo;
     }
 
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
+
+
+    public Alert getAlert() {
+        return alert;
     }
 
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setAlert(Alert alert) {
+        this.alert = alert;
     }
 }

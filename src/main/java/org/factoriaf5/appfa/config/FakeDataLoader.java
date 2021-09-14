@@ -25,9 +25,9 @@ public class FakeDataLoader {
         pacienteRepository.deleteAll();
         pacienteRepository.saveAll(
                 List.of(
-                        new Paciente (1L, "403998", "646474723", "14/12/2022", "16/12/2022", "27/12/2022", "14/12/2023", "14/12/2022", true, false, "archivo.jpg"),
-                        new Paciente(2L, "503998", "546474723", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", false, true, "archivo.png"),
-                        new Paciente(2L, "503998", "546474723", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", false, true, "archivo.png")
+                        new Paciente (1L, "403998", "646474723", true, false, "archivo.jpg"),
+                        new Paciente(2L, "503998", "546474723",false, true, "archivo.png"),
+                        new Paciente(2L, "503998", "546474723",  false, true, "archivo.png")
 
                 )
         );

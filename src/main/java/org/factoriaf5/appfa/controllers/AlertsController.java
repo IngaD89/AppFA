@@ -1,6 +1,5 @@
 package org.factoriaf5.appfa.controllers;
 
-
 import org.factoriaf5.appfa.models.Alert;
 import org.factoriaf5.appfa.repositories.AlertRepository;
 import org.springframework.beans.factory.annotation.Autowired;

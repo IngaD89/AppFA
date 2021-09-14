@@ -8,8 +8,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import java.util.List;
 
+import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
@@ -36,8 +36,8 @@ public class IntegrationTest {
     @Test
     public void devuelveListaDePacientes() throws Exception{
         List<Paciente> pacientes = List.of(
-                new Paciente (1L, "403998", "646474723", "14/12/2022", "16/12/2022", "27/12/2022", "14/12/2023", "14/12/2022", true, false, "archivo.jpg"),
-                new Paciente(2L, "503998", "546474723", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", "09/05/2022", false, true, "archivo.png")
+                new Paciente (1L, "403998", "646474723", true, false, "archivo.jpg"),
+                new Paciente(2L, "503998", "546474723", false, true, "archivo.png")
         );
         pacienteRepository.saveAll(pacientes);
         mockMvc.perform(get("/pacientes"))

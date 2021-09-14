@@ -7,11 +7,8 @@ import org.factoriaf5.appfa.repositories.PacienteRepository;
 import org.factoriaf5.appfa.services.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,16 +31,16 @@ public class PacienteController {
     public List<Paciente> allPacientes(){
         return pacienteRepository.findAll();
     }
+
     @GetMapping( "/pacientes/{id}")
     public Optional<Paciente> findById(@PathVariable Long id) {
         return pacienteRepository.findById(id);
     }
 
-
     @PostMapping("/pacientes")
     public Paciente addPaciente(@RequestBody Paciente paciente){
 
-        if (paciente.getFechaRegistro() != null) {
+        if (alerts.getFechaRegistro() != null) {
             List<Alert> alertasDelPaciente = List.of(
                     new Alert(paciente.getFechaRegistro().plusMonths(1)),
                     new Alert(paciente.getFechaRegistro().plusMonths(3)),
@@ -55,12 +52,14 @@ public class PacienteController {
 
         return pacienteRepository.save(paciente);
     }
+
     @DeleteMapping("/pacientes/{id}")
     public ResponseEntity<Paciente> delete(@PathVariable Long id) {
         Paciente paciente = pacienteRepository.findById(id).orElse(null);
         pacienteRepository.deleteById(id);
         return ResponseEntity.ok().body(paciente);
     }
+
     @PutMapping("/altas/edit/{id}")
     public ResponseEntity<Paciente> edit(@PathVariable Long id) {
         Paciente paciente = pacienteRepository.findById(id).orElse(null);
