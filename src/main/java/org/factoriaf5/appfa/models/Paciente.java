@@ -14,9 +14,9 @@ public class Paciente {
     private boolean miocardio;
     private boolean consentimiento;
     private String archivo;
+    private LocalDateTime fechaRegistro;
     @ManyToOne
     @JoinColumn(name = "alerts_id")
-
     private Alert alert;
 
 
@@ -108,5 +108,13 @@ public class Paciente {
 
     public void setAlert(Alert alert) {
         this.alert = alert;
+    }
+
+    public LocalDateTime getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 }

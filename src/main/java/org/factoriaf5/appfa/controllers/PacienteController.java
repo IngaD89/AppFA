@@ -40,7 +40,7 @@ public class PacienteController {
     @PostMapping("/pacientes")
     public Paciente addPaciente(@RequestBody Paciente paciente){
 
-        if (alerts.getFechaRegistro() != null) {
+        if (paciente.getFechaRegistro() != null) {
             List<Alert> alertasDelPaciente = List.of(
                     new Alert(paciente.getFechaRegistro().plusMonths(1)),
                     new Alert(paciente.getFechaRegistro().plusMonths(3)),

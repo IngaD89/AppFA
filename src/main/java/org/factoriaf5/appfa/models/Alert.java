@@ -10,19 +10,18 @@ public class Alert {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime fechaRegistro;
     private LocalDateTime dateTime;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Alert")
-    private List<Paciente> pacientes;
 
-    public Alert() {
+
+
+    public Alert(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
 
     }
 
-    public Alert(LocalDateTime dateTime, List<Paciente> pacientes) {
-        this.dateTime = dateTime;
-        this.pacientes = pacientes;
+    public Alert() {
+
     }
 
     public Long getId() {
@@ -42,11 +41,4 @@ public class Alert {
     }
 
 
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
 }
