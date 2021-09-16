@@ -64,8 +64,8 @@ public class Paciente {
     public boolean getMiocardio() {
         return miocardio;
     }
-    public void setMiocardio(boolean miocardio) {
-        this.miocardio = miocardio;
+    public void setMiocardio(String miocardio) {
+        this.miocardio = miocardio.equals("on");
     }
 
 

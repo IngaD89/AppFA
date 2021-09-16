@@ -13,7 +13,7 @@ export const Pacientes = (props) => {
                 <div>{props.pacientes.terceraLlamada}</div>
                 <div>{props.pacientes.pruebaEsfuerzo}</div>
                 <div>{props.pacientes.eco}</div>
-                <div>{props.pacientes.miocardio}</div>
+                <div>{props.pacientes.miocardio && "miocardio" }</div>
                 <div>{props.pacientes.consentimiento}</div>
                 <div>{props.pacientes.archivo}</div>
             </section>
