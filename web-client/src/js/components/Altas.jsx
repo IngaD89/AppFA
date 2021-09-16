@@ -11,9 +11,6 @@ export const Altas = (props) => {
     const [datos, setDatos] = useState({
         nhc: '',
         telefono: '',
-        primeraLlamada: '',
-        segundaLlamada: '',
-        terceraLlamada: '',
         pruebaEsfuerzo: '',
         eco: '',
         miocardio: '',
@@ -74,29 +71,6 @@ export const Altas = (props) => {
                                onChange={handleInputChange}/>
 
                     </div>
-
-
-                    <div className="input__wrapper">
-                        <label>Primera Llamada</label>
-                        <input id="primeraLlamada"
-                               type="date"
-                               name="primeraLlamada"
-                               onChange={handleInputChange}/>
-                    </div>
-                    <div className="input__wrapper">
-                        <label>Segunda Llamada</label>
-                        <input id="segundaLlamada"
-                               type="date"
-                               name="segundaLlamada"
-                               onChange={handleInputChange}/>
-                    </div>
-                    <div className="input__wrapper">
-                        <label>Tercera Llamada</label>
-                        <input id="terceraLlamada"
-                               type="date"
-                               name="terceraLlamada"
-                               onChange={handleInputChange}/>
-                    </div>
                     <div className="input__wrapper">
                         <label>Prueba Esfuerzo</label>
                         <input id="pruebaEsfuerzo"
@@ -140,8 +114,8 @@ export const Altas = (props) => {
                     </div>
 
 
-                    <div className="btn__submit">
-                        <input className="btn__submit--input"
+                    <div className="buttons__wrapper">
+                        <input className="btn"
                                type="submit"
                                value="Dar de Alta"
                         />

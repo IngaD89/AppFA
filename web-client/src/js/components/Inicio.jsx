@@ -2,6 +2,8 @@ import * as React from 'react';
 import Mailto from "react-protected-mailto";
 import logo__section from "./assets/img/FA-APP-logo.svg";
 
+
+
 export const Inicio = () => {
     return (
         <div>
@@ -21,8 +23,8 @@ export const Inicio = () => {
                             <input type="password"
                                    placeholder="Contraseña" />
                         </div>
-                        <div className="btn__login--wrapper">
-                            <input className="btn__login--input"
+                        <div className="buttons__wrapper">
+                            <input className="btn"
                                    type="submit"
                                    value="Iniciar Sesión" />
                         </div>
