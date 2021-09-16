@@ -1,5 +1,8 @@
 package org.factoriaf5.appfa.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -15,9 +18,7 @@ public class Paciente {
     private boolean consentimiento;
     private String archivo;
     private LocalDateTime fechaRegistro;
-    @ManyToOne
-    @JoinColumn(name = "alerts_id")
-    private Alert alert;
+
 
 
     public Paciente(Long id, String nhc, String telefono, boolean miocardio, boolean consentimiento, String archivo) {
@@ -98,16 +99,6 @@ public class Paciente {
     public String getPhotoImagePath() {
         if (archivo == null || id == null) return null;
         return "/paciente-photo/" + id + "/" + archivo;
-    }
-
-
-
-    public Alert getAlert() {
-        return alert;
-    }
-
-    public void setAlert(Alert alert) {
-        this.alert = alert;
     }
 
     public LocalDateTime getFechaRegistro() {

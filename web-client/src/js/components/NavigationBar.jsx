@@ -15,7 +15,7 @@ export const NavigationBar = () => {
             <Link to={"/login"}><FaUserMd className="icon"/>Login</Link>
             <Link to={"/altas"}><FaListAlt className="icon"/>Altas</Link>
             <Link to={"/pacientes"}><FaUsers className="icon"/>Pacientes</Link>
-            <Link to={"/notificaciones"}><FaBell className="icon"/>Notificaciones</Link>
+            <Link to={"/alerts"}><FaBell className="icon"/>Notificaciones</Link>
             <Link to={"/contacto"}><FaQuestionCircle className="icon"/>Contacto</Link>
             <div className="footer">
                 <p className="copy"><span>FA-APP © 2021. </span>All rights reserved.</p>

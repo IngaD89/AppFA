@@ -11,13 +11,14 @@ public class Alert {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime dateTime;
+    private String nhc;
 
 
 
 
-    public Alert(LocalDateTime dateTime) {
+    public Alert(LocalDateTime dateTime, String nhc) {
         this.dateTime = dateTime;
-
+        this.nhc = nhc;
     }
 
     public Alert() {
@@ -41,4 +42,11 @@ public class Alert {
     }
 
 
+    public String getNhc() {
+        return nhc;
+    }
+
+    public void setNhc(String nhc) {
+        this.nhc = nhc;
+    }
 }

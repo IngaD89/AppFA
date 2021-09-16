@@ -4,7 +4,7 @@ import {NavigationBar} from "./NavigationBar";
 import {Inicio} from "./Inicio";
 import {Login} from "./Login";
 import {Altas} from "./Altas";
-import {Notificaciones} from "./Notificaciones";
+import {Alerts} from "./Alerts";
 import {Contacto} from "./Contacto";
 import {PacienteCard} from "./PacienteCard";
 import {useEffect, useState} from "react";
@@ -51,8 +51,8 @@ export const App = () => {
                 <Route exact path="/pacientes">
                     <PacienteCard pacientes={pacientes}/>
                 </Route>
-                <Route path="/notificaciones">
-                    <Notificaciones/>
+                <Route path="/alerts">
+                    <Alerts/>
                 </Route>
                 <Route path="/contacto">
                     <Contacto/>

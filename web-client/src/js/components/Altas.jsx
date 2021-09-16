@@ -11,6 +11,7 @@ export const Altas = (props) => {
     const [datos, setDatos] = useState({
         nhc: '',
         telefono: '',
+        fechaRegistro: '',
         primeraLlamada: '',
         segundaLlamada: '',
         terceraLlamada: '',
@@ -75,6 +76,13 @@ export const Altas = (props) => {
 
                     </div>
 
+                    <div className="input__wrapper">
+                        <label>Fecha de registro</label>
+                        <input id="fechaRegistro"
+                               type="date"
+                               name="fechaRegistro"
+                               onChange={handleInputChange}/>
+                    </div>
 
                     <div className="input__wrapper">
                         <label>Primera Llamada</label>
