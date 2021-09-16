@@ -1,5 +1,5 @@
 import * as React from 'react';
-import logo__section from "./assets/img/FA-APP-logo.svg";
+
 
 
 export const Pacientes = (props) => {
