@@ -1,7 +1,10 @@
 package org.factoriaf5.appfa;
 
 import org.factoriaf5.appfa.models.Paciente;
+import org.factoriaf5.appfa.repositories.AlertRepository;
 import org.factoriaf5.appfa.repositories.PacienteRepository;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -24,9 +27,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class IntegrationTest {
 
     @Autowired
+    private AlertRepository alertRepository;
+
+    @Autowired
     MockMvc mockMvc;
 
     private final PacienteRepository pacienteRepository;
+
+
+    @AfterEach
+    void setUp() {
+        alertRepository.deleteAll();
+        pacienteRepository.deleteAll();
+    }
+
 
     @Autowired
     public IntegrationTest(PacienteRepository pacienteRepository) {
@@ -62,7 +76,7 @@ public class IntegrationTest {
 
         // cuando creamos un paciente
         mockMvc.perform(post("/pacientes").contentType(MediaType.APPLICATION_JSON)
-                .content("{ \"fechaRegistro\": \"2022-03-04T10:15:30\" }"))
+                .content("{ \"fechaRegistro\": \"2022-03-04T10:15:30\", \"nhc\": \"403998\" }"))
                 .andExpect(status().isOk());
 
 
@@ -71,8 +85,11 @@ public class IntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[*]", hasSize(3)))
                 .andExpect(jsonPath("$[0].dateTime", equalTo("2022-04-04T10:15:30")))
+                .andExpect(jsonPath("$[0].nhc", equalTo("403998")))
                 .andExpect(jsonPath("$[1].dateTime", equalTo("2022-06-04T10:15:30")))
-                .andExpect(jsonPath("$[2].dateTime", equalTo("2023-03-04T10:15:30")));
+                .andExpect(jsonPath("$[1].nhc", equalTo("403998")))
+                .andExpect(jsonPath("$[2].dateTime", equalTo("2023-03-04T10:15:30")))
+                .andExpect(jsonPath("$[2].nhc", equalTo("403998")));
 
     }
 

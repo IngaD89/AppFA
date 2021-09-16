@@ -42,9 +42,9 @@ public class PacienteController {
 
         if (paciente.getFechaRegistro() != null) {
             List<Alert> alertasDelPaciente = List.of(
-                    new Alert(paciente.getFechaRegistro().plusMonths(1)),
-                    new Alert(paciente.getFechaRegistro().plusMonths(3)),
-                    new Alert(paciente.getFechaRegistro().plusYears(1))
+                    new Alert(paciente.getFechaRegistro().plusMonths(1), paciente.getNhc()),
+                    new Alert(paciente.getFechaRegistro().plusMonths(3), paciente.getNhc()),
+                    new Alert(paciente.getFechaRegistro().plusYears(1), paciente.getNhc())
             );
 
             alertRepository.saveAll(alertasDelPaciente);
