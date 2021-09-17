@@ -21,10 +21,11 @@ public class Paciente {
 
 
 
-    public Paciente(Long id, String nhc, String telefono, boolean miocardio, boolean consentimiento, String archivo) {
+    public Paciente(Long id, String nhc, String telefono, LocalDateTime fechaRegistro, boolean miocardio, boolean consentimiento, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
+        this.fechaRegistro = fechaRegistro;
         this.miocardio = miocardio;
         this.consentimiento = consentimiento;
         this.archivo = archivo;

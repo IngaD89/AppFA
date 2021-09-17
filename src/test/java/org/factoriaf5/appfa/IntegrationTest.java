@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -50,8 +51,8 @@ public class IntegrationTest {
     @Test
     public void devuelveListaDePacientes() throws Exception{
         List<Paciente> pacientes = List.of(
-                new Paciente (1L, "403998", "646474723", true, false, "archivo.jpg"),
-                new Paciente(2L, "503998", "546474723", false, true, "archivo.png")
+                new Paciente (1L, "403998", "646474723", LocalDateTime.parse("2022-03-04T10:15:30"), true, false, "archivo.jpg"),
+                new Paciente(2L, "503998", "546474723", LocalDateTime.parse("2022-03-04T10:15:30"), false, true, "archivo.png")
         );
         pacienteRepository.saveAll(pacientes);
         mockMvc.perform(get("/pacientes"))
@@ -59,13 +60,13 @@ public class IntegrationTest {
                 .andExpect(jsonPath("$[*]", hasSize(2)))
                 .andExpect(jsonPath("$[0].nhc", equalTo("403998")))
                 .andExpect(jsonPath("$[0].telefono", equalTo("646474723")))
-                .andExpect(jsonPath("$[0].fechaRegistro", equalTo(null)))
+                .andExpect(jsonPath("$[0].fechaRegistro", equalTo("2022-03-04T10:15:30")))
                 .andExpect(jsonPath("$[0].consentimiento", equalTo(false)))
                 .andExpect(jsonPath("$[0].miocardio", equalTo(true)))
                 .andExpect(jsonPath("$[0].archivo", equalTo("archivo.jpg")))
                 .andExpect(jsonPath("$[1].nhc", equalTo("503998")))
                 .andExpect(jsonPath("$[1].telefono", equalTo("546474723")))
-                .andExpect(jsonPath("$[1].fechaRegistro", equalTo(null)))
+                .andExpect(jsonPath("$[1].fechaRegistro", equalTo("2022-03-04T10:15:30")))
                 .andExpect(jsonPath("$[1].consentimiento", equalTo(true)))
                 .andExpect(jsonPath("$[1].miocardio", equalTo(false)))
                 .andExpect(jsonPath("$[1].archivo", equalTo("archivo.png")));

@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
@@ -25,9 +26,9 @@ public class FakeDataLoader {
         pacienteRepository.deleteAll();
         pacienteRepository.saveAll(
                 List.of(
-                        new Paciente (1L, "403998", "646474723", true, false, "archivo.jpg"),
-                        new Paciente(2L, "503998", "546474723",false, true, "archivo.png"),
-                        new Paciente(2L, "503998", "546474723",  false, true, "archivo.png")
+                        new Paciente (1L, "403998", "646474723", LocalDateTime.parse("2022-03-04T10:15:30"), true, false, "archivo.jpg"),
+                        new Paciente(2L, "503998", "546474723", LocalDateTime.parse("2022-04-04T10:15:30"), false, true, "archivo.png"),
+                        new Paciente(2L, "503998", "546474723", LocalDateTime.parse("2022-05-04T10:15:30"), false, true, "archivo.png")
 
                 )
         );
