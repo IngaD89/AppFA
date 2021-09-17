@@ -5,8 +5,8 @@ export const Alerts = (props) => {
     return (
         <div>
             <section>
-                <div>{props.pacientes.fechaRegistro}</div>
                 <div>{props.pacientes.nhc}</div>
+                <div>{props.pacientes.fechaRegistro}</div>
             </section>
         </div>
     )
