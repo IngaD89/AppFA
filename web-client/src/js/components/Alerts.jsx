@@ -7,7 +7,6 @@ export const Alerts = (props) => {
             <section>
                 <div>{props.pacientes.fechaRegistro}</div>
                 <div>{props.pacientes.nhc}</div>
-                <div>{props.pacientes.nhc}</div>
             </section>
         </div>
     )
