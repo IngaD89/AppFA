@@ -2,7 +2,6 @@ import * as React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {NavigationBar} from "./NavigationBar";
 import {Inicio} from "./Inicio";
-import {Login} from "./Login";
 import {Altas} from "./Altas";
 import {Alerts} from "./Alerts";
 import {Contacto} from "./Contacto";
@@ -41,9 +40,6 @@ export const App = () => {
             <Switch>
                 <Route exact path="/">
                     <Inicio/>
-                </Route>
-                <Route path="/inicio">
-                    <Login/>
                 </Route>
                 <Route path="/altas">
                     <Altas cuandoTermines={cuandoTermines}/>

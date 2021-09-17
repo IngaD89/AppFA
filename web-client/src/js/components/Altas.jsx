@@ -12,8 +12,6 @@ export const Altas = (props) => {
         nhc: '',
         telefono: '',
         fechaRegistro: '',
-        primeraLlamada: '',
-        segundaLlamada: '',
         pruebaEsfuerzo: '',
         eco: '',
         miocardio: '',

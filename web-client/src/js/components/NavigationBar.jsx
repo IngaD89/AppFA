@@ -12,7 +12,7 @@ export const NavigationBar = () => {
                 <img className="logo" src={logo} alt={'LogoApp'} />
             </div>
             <Link className="list__item" to={"/"}><FaHome className="icon"/>Inicio</Link>
-            <Link className="list__item" to={"/login"}><FaUserPlus className="icon"/>Login</Link>
+            <Link className="list__item" to={"/"}><FaUserPlus className="icon"/>Logout</Link>
             <Link className="list__item" to={"/altas"}><FaListAlt className="icon"/>Altas</Link>
             <Link className="list__item" to={"/pacientes"}><FaUserPlus className="icon"/>Pacientes</Link>
             <Link className="list__item" to={"/notificaciones"}><FaBell className="icon"/>Notificaciones</Link>
