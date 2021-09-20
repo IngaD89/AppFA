@@ -60,6 +60,8 @@ task copyFiles(type: Copy) {
     include("*.html")
     include("*.js")
     include("*.css")
+    include("*.jpg")
+    include("*.svg")
     into("./src/main/resources/static")
 }
 

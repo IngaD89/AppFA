@@ -44,7 +44,7 @@ a:hover {
   padding-top: 20px;
   margin-top: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
 }
 
@@ -93,16 +93,15 @@ p {
 }
 
 .logo__wrapper {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 .logo {
   max-width: 180px;
 }
 .logo__section {
-  justify-content: center;
-  padding: 0 0 0 30px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
   max-width: 30%;
+  align-content: center;
 }
 
 /*.logo__section {
@@ -168,11 +167,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-morph-shape {
   fill: #CCC;
 }
-
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-
 }
 
 /* Individual item */
@@ -181,11 +178,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .list__item {
-  margin: 0 0 20px;
+  margin: 0;
+  padding: 0;
 }
 .icon {
-  margin: 0 15px 0 0;
-  padding: 0;
+  margin: 0 20px 0 5px;
+  padding-top: 20px;
 }
 
 
@@ -199,13 +197,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* SECTIONS */
 
 section {
-  padding: 35px 0;
+  padding: 30px 0;
   text-align: center;
-  max-width: 100%;
-  display: inline-block;
+  max-width: 60%;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
   /*background-image: url("src/js/components/assets/img/hClinic.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -218,11 +217,11 @@ section {
   border-bottom: thin solid #08693E;
   padding-bottom: 10px;
 }
-.form__alta, .form__inicio, .contacto__wrapper, .pacientes__wrapper {
+.form__alta, .form__inicio, .contacto__wrapper, .pacientes__wrapper, .alertas__wrapper {
   border: thin solid #CCC;
   text-align: center;
   margin-bottom: 50px;
-  padding: 20px 30px 50px;
+  padding: 20px 40px 50px;
   background-color: #FFFFFF;
   box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
 }
@@ -359,10 +358,7 @@ input[type="checkbox" i] {
 
 
 /* CONTACTO */
-.contacto__wrapper {
-  text-align: center;
-  justify-content: center;
-}
+
 .contacto__text {
   font-weight: 600;
   font-size: 1.1rem;
@@ -376,6 +372,14 @@ input[type="checkbox" i] {
 .contacto__link:hover {
   font-weight: 600;
 }
+
+
+
+/* ALERTS */
+.Mui-checked {
+  color: #08693E;
+}
+
 
 
 /* FOOTER */
