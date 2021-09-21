@@ -38,26 +38,24 @@ public class ScheduledAlerts {
 
     @Scheduled(fixedRate = 5000)
     @EventListener(ApplicationReadyEvent.class)
-       public void showAlerts() {
+    public void showAlerts() {
 
         LocalDateTime now = LocalDateTime.now();
-            List<Alert> alerts= alertService.allAlerts();
-            for (Alert alert: alerts){
-//               if (now.plusDays(2).compareTo(alert.getDateTime()) > 0) {
-             if (true)  {
-                   Optional<Paciente> paciente= pacienteRepository.findByNhc(alert.getNhc());
-                   if(paciente.isPresent()) {
-                       senderService.sendEmail("to@example.com",
-                               "alert",
-                               "paciente " + alert.getNhc() + "tiene una visita el dia " + alert.getDateTime());
-                   }
+        List<Alert> alerts = alertService.allAlerts();
+        for (Alert alert : alerts) {
+            if (now.plusDays(2).compareTo(alert.getDateTime()) > 0) {
+                Optional<Paciente> paciente = pacienteRepository.findByNhc(alert.getNhc());
+                if (paciente.isPresent()) {
+                    senderService.sendEmail("to@example.com",
+                            "alert",
+                            "paciente " + alert.getNhc() + "tiene una visita el dia " + alert.getDateTime());
+                }
 
-
-               }
 
             }
 
         }
 
     }
+}
 
