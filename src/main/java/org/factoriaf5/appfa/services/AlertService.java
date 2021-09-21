@@ -1,7 +1,6 @@
 package org.factoriaf5.appfa.services;
 
 import org.factoriaf5.appfa.models.Alert;
-import org.factoriaf5.appfa.models.Paciente;
 import org.factoriaf5.appfa.repositories.AlertRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +10,12 @@ import java.util.List;
 @Service
 public class AlertService {
 
-    @Autowired
-    private AlertRepository alertRepository;
+    private final AlertRepository alertRepository;
 
+    @Autowired
     public AlertService(AlertRepository alertRepository) {
         this.alertRepository = alertRepository;
+
     }
 
     public List<Alert> allAlerts() {
