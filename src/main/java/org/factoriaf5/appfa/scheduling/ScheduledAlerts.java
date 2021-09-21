@@ -36,7 +36,7 @@ public class ScheduledAlerts {
     }
 
 
-    @Scheduled(fixedRate = 5000)
+//    @Scheduled(fixedRate = 5000)
     @EventListener(ApplicationReadyEvent.class)
     public void showAlerts() {
 
