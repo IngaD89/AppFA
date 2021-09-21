@@ -29,6 +29,14 @@ export const Altas = (props) => {
         })
     }
 
+    const handleDateChange = (event) => {
+        setDatos({
+            ...datos,
+            [event.target.name]: event.target.value + "T00:00:00"
+        })
+    }
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -75,7 +83,7 @@ export const Altas = (props) => {
                             <input id="fechaRegistro"
                                    type="date"
                                    name="fechaRegistro"
-                                   onChange={handleInputChange}/>
+                                   onChange={handleDateChange}/>
                         </div>
                         <div className="input__wrapper">
                             <label>Prueba Esfuerzo</label>
