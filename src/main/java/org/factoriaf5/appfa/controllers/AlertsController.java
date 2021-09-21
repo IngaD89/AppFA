@@ -22,4 +22,5 @@ public class AlertsController {
     public List<Alert> allAlerts() {
         return alertRepository.findAll();
     }
+
 }
