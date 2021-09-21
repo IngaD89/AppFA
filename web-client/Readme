@@ -11,7 +11,11 @@ APP-FA ----Gradel-----Web-Client-- SRC------ JS-
 									App.jsx
 									Contacto.jsx
 									Inicio.jsx
+<<<<<<< HEAD
 						NavigationBar.jsx
+=======
+						NavitationBar.jsx
+>>>>>>> 386288d977f52df1a52368ce8475356d26d1e584
 						PacientesCard.jsx
 						Pacientes.jsx
 
@@ -22,5 +26,8 @@ APP-FA ----Gradel-----Web-Client-- SRC------ JS-
 
 SRC--------SCSS----main.scss
 	-----.Index.Html
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 386288d977f52df1a52368ce8475356d26d1e584
