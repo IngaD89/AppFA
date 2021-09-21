@@ -10,16 +10,7 @@ export const Alerts = (props) => {
 
 
     const columns = [
-        {
-            field: 'id',
-            headerName: 'ID',
-            description: 'This column has a value getter and is not sortable.',
-            sortable: false,
-            width: 70,
-            /*valueGetter: (params) =>
-                `${params.getValue(params.id, 'id') || ''}
-                ${params.getValue(params.id, 'fechaRegistro') || ''}`,*/
-        },
+
         {
             field: 'nhc',
             headerName: 'NHC',
@@ -39,7 +30,6 @@ export const Alerts = (props) => {
             /*valueGetter: (params) =>
                 `${params.getValue(params.id, 'nhc') || ''} 
                 ${params.getValue(params.id, 'fechaRegistro') || ''}`,*/
-
         },
     ];
 
