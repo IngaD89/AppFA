@@ -3,6 +3,7 @@ import {useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
 import {Redirect} from "react-router-dom"
 import logo__section from "./assets/img/FA-APP-logo.svg";
+import {DateTimePickerComponent} from "@syncfusion/ej2-react-calendars";
 
 
 export const Altas = (props) => {
@@ -17,7 +18,7 @@ export const Altas = (props) => {
         miocardio: '',
         consentimiento: '',
         archivo: ''
-})
+    })
 
     const [enviado, setEnviado] = useState(false)
 
@@ -80,10 +81,11 @@ export const Altas = (props) => {
                         </div>
                         <div className="input__wrapper">
                             <label>Fecha de registro</label>
-                            <input id="fechaRegistro"
-                                   type="datetime-local"
-                                   name="fechaRegistro"
-                                   onChange={handleDateChange}/>
+                            <DateTimePickerComponent
+                                id="fechaRegistro"
+                                type="date"
+                                name="fechaRegistro"
+                                onChange={handleInputChange}/>
                         </div>
                         <div className="input__wrapper">
                             <label>Prueba Esfuerzo</label>
