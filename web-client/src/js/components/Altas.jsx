@@ -68,9 +68,9 @@ export const Altas = (props) => {
                         </div>
                         <div className="input__wrapper">
                             <label>Teléfono</label>
-                            <input id="tel"
+                            <input id="telefono"
                                    type="text"
-                                   name="tel"
+                                   name="telefono"
                                    placeholder="+34 123456789"
 
                                 /* pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
@@ -81,7 +81,7 @@ export const Altas = (props) => {
                         <div className="input__wrapper">
                             <label>Fecha de registro</label>
                             <input id="fechaRegistro"
-                                   type="date"
+                                   type="datetime-local"
                                    name="fechaRegistro"
                                    onChange={handleDateChange}/>
                         </div>
