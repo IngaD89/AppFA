@@ -30,13 +30,6 @@ export const Altas = (props) => {
         })
     }
 
-    const handleDateChange = (event) => {
-        setDatos({
-            ...datos,
-            [event.target.name]: event.target.value + "T00:00:00"
-        })
-    }
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -89,17 +82,19 @@ export const Altas = (props) => {
                         </div>
                         <div className="input__wrapper">
                             <label>Prueba Esfuerzo</label>
-                            <input id="pruebaEsfuerzo"
-                                   type="date"
-                                   name="pruebaEsfuerzo"
-                                   onChange={handleInputChange}/>
+                            <DateTimePickerComponent
+                                id="pruebaEsfuerzo"
+                                type="date"
+                                name="pruebaEsfuerzo"
+                                onChange={handleInputChange}/>
                         </div>
                         <div className="input__wrapper">
                             <label>ECO</label>
-                            <input id="eco"
-                                   type="date"
-                                   name="eco"
-                                   onChange={handleInputChange}/>
+                            <DateTimePickerComponent
+                                id="eco"
+                                type="date"
+                                name="eco"
+                                onChange={handleInputChange}/>
                         </div>
 
                         <div className="checkboxes">
