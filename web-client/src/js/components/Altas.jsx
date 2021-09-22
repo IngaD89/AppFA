@@ -6,6 +6,7 @@ import logo__section from "./assets/img/FA-APP-logo.svg";
 import {DateTimePickerComponent} from "@syncfusion/ej2-react-calendars";
 
 
+
 export const Altas = (props) => {
 
 
@@ -29,6 +30,8 @@ export const Altas = (props) => {
             [event.target.name]: event.target.value
         })
     }
+
+
 
 
     const handleSubmit = (event) => {

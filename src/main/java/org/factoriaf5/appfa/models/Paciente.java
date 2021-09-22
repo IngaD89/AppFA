@@ -2,6 +2,7 @@ package org.factoriaf5.appfa.models;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Table(name="pacientes")
@@ -16,11 +17,11 @@ public class Paciente {
     private boolean miocardio;
     private boolean consentimiento;
     private String archivo;
-    private LocalDateTime fechaRegistro;
+    private ZonedDateTime fechaRegistro;
 
 
 
-    public Paciente(Long id, String nhc, String telefono, LocalDateTime fechaRegistro, boolean miocardio, boolean consentimiento, String archivo) {
+    public Paciente(Long id, String nhc, String telefono, ZonedDateTime fechaRegistro, boolean miocardio, boolean consentimiento, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
@@ -101,11 +102,11 @@ public class Paciente {
         return "/paciente-photo/" + id + "/" + archivo;
     }
 
-    public LocalDateTime getFechaRegistro() {
+    public ZonedDateTime getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
+    public void setFechaRegistro(ZonedDateTime fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 

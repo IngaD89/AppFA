@@ -47,7 +47,7 @@ export const Pacientes = (props) => {
                                 <div className="card__text--details">{props.pacientes.eco}</div>
                                 {/*<div className="card__text--details">
                                     <FaCheckCircle className="icon__check"/>
-                                    {props.pacientes.miocardio && "miocardio" }
+                                    {props.pacientes.miocardio && "miocardio " }
                                 </div>
                                 <div className="card__text--details">
                                     <FaCheckCircle className="icon__check"/>
