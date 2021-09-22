@@ -17,11 +17,11 @@ public class Paciente {
     private boolean miocardio;
     private boolean consentimiento;
     private String archivo;
-    private ZonedDateTime fechaRegistro;
+    private LocalDateTime fechaRegistro;
 
 
 
-    public Paciente(Long id, String nhc, String telefono, ZonedDateTime fechaRegistro, boolean miocardio, boolean consentimiento, String archivo) {
+    public Paciente(Long id, String nhc, String telefono, LocalDateTime fechaRegistro, boolean miocardio, boolean consentimiento, String archivo) {
         this.id = id;
         this.nhc = nhc;
         this.telefono = telefono;
@@ -102,11 +102,11 @@ public class Paciente {
         return "/paciente-photo/" + id + "/" + archivo;
     }
 
-    public ZonedDateTime getFechaRegistro() {
+    public LocalDateTime getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(ZonedDateTime fechaRegistro) {
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
