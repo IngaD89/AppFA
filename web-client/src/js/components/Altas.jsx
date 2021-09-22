@@ -3,6 +3,7 @@ import {useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
 import {Redirect} from "react-router-dom"
 import logo__section from "./assets/img/FA-APP-logo.svg";
+import {DateTimePickerComponent} from "@syncfusion/ej2-react-calendars";
 
 
 export const Altas = (props) => {
@@ -17,7 +18,7 @@ export const Altas = (props) => {
         miocardio: '',
         consentimiento: '',
         archivo: ''
-})
+    })
 
     const [enviado, setEnviado] = useState(false)
 
@@ -28,6 +29,7 @@ export const Altas = (props) => {
             [event.target.name]: event.target.value
         })
     }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -60,9 +62,9 @@ export const Altas = (props) => {
                         </div>
                         <div className="input__wrapper">
                             <label>Teléfono</label>
-                            <input id="tel"
+                            <input id="telefono"
                                    type="text"
-                                   name="tel"
+                                   name="telefono"
                                    placeholder="+34 123456789"
 
                                 /* pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
@@ -72,24 +74,27 @@ export const Altas = (props) => {
                         </div>
                         <div className="input__wrapper">
                             <label>Fecha de registro</label>
-                            <input id="fechaRegistro"
-                                   type="date"
-                                   name="fechaRegistro"
-                                   onChange={handleInputChange}/>
+                            <DateTimePickerComponent
+                                id="fechaRegistro"
+                                type="date"
+                                name="fechaRegistro"
+                                onChange={handleInputChange}/>
                         </div>
                         <div className="input__wrapper">
                             <label>Prueba Esfuerzo</label>
-                            <input id="pruebaEsfuerzo"
-                                   type="date"
-                                   name="pruebaEsfuerzo"
-                                   onChange={handleInputChange}/>
+                            <DateTimePickerComponent
+                                id="pruebaEsfuerzo"
+                                type="date"
+                                name="pruebaEsfuerzo"
+                                onChange={handleInputChange}/>
                         </div>
                         <div className="input__wrapper">
                             <label>ECO</label>
-                            <input id="eco"
-                                   type="date"
-                                   name="eco"
-                                   onChange={handleInputChange}/>
+                            <DateTimePickerComponent
+                                id="eco"
+                                type="date"
+                                name="eco"
+                                onChange={handleInputChange}/>
                         </div>
 
                         <div className="checkboxes">

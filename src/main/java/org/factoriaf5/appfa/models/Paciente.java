@@ -1,8 +1,5 @@
 package org.factoriaf5.appfa.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -14,6 +11,8 @@ public class Paciente {
     private Long id;
     private String nhc;
     private String telefono;
+    private LocalDateTime pruebaEsfuerzo;
+    private LocalDateTime eco;
     private boolean miocardio;
     private boolean consentimiento;
     private String archivo;
@@ -108,5 +107,21 @@ public class Paciente {
 
     public void setFechaRegistro(LocalDateTime fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
+    }
+
+    public LocalDateTime getPruebaEsfuerzo() {
+        return pruebaEsfuerzo;
+    }
+
+    public void setPruebaEsfuerzo(LocalDateTime pruebaEsfuerzo) {
+        this.pruebaEsfuerzo = pruebaEsfuerzo;
+    }
+
+    public LocalDateTime getEco() {
+        return eco;
+    }
+
+    public void setEco(LocalDateTime eco) {
+        this.eco = eco;
     }
 }

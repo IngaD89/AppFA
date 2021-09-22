@@ -11,6 +11,7 @@ APP-FA ----Gradel-----Web-Client-- SRC------ JS-
 									App.jsx
 									Contacto.jsx
 									Inicio.jsx
+
 						NavitationBar.jsx
 						PacientesCard.jsx
 						Pacientes.jsx
@@ -22,3 +23,4 @@ APP-FA ----Gradel-----Web-Client-- SRC------ JS-
 
 SRC--------SCSS----main.scss
 	-----.Index.Html
+

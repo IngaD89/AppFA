@@ -26,7 +26,7 @@ public class FakeDataLoader {
         pacienteRepository.deleteAll();
         pacienteRepository.saveAll(
                 List.of(
-                        new Paciente (1L, "403998", "646474723", LocalDateTime.parse("2022-03-04T10:15:30"), true, false, "archivo.jpg"),
+                        new Paciente(1L, "403998", "646474723", LocalDateTime.parse("2021-09-21T10:15:30"), true, false, "archivo.jpg"),
                         new Paciente(2L, "503998", "546474723", LocalDateTime.parse("2022-04-04T10:15:30"), false, true, "archivo.png"),
                         new Paciente(2L, "503998", "546474723", LocalDateTime.parse("2022-05-04T10:15:30"), false, true, "archivo.png")
 
