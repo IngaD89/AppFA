@@ -11,11 +11,15 @@ html {
   font-size: 0.85em;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.05);
-
-  /*background-image: url("src/js/components/assets/img/hClinic.jpg");
+}
+.bk__image {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;*/
+  background-size: cover;
+  background-color: #b8b7ad;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 /* LOGO */
@@ -31,13 +35,7 @@ html {
   max-width: 200px;
   align-content: center;
 }
-/*.logo__section {
-  margin: 0 0 40px 30px;
-  justify-content: center;
-  max-width: 180px;
-  padding: 0 0 0 30px;
-  display: flex;
-}*/
+
 
 
 /* LINKS & BUTTONS */
@@ -210,18 +208,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* SECTIONS */
 
 section {
-  padding: 0;
+  padding: 30px 0 40px;;
   text-align: center;
-  max-width: 60%;
+  max-width: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  margin: 20px auto 40px;
-  /*background-image: url("src/js/components/assets/img/hClinic.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;*/
+  margin: 0 auto ;
+
 }
 
 /* FORMS */
@@ -244,7 +239,7 @@ section {
   flex-direction: column;
   justify-content: space-around;
 }
-label, .checkbox__label {
+label {
   text-align: left;
   font-size: 1rem;
   font-weight: 600;
@@ -256,6 +251,15 @@ input {
   box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
 }
+/*.e-input-group .e-control-wrapper, .e-datetime-wrapper .e-control, .e-datetimepicker, .e-lib .e-input, .e-keyboard {
+  padding: 5px 20px 5px 10px;
+  border: thin solid #08693E;
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}*/
+
+
+
 input[type="date" i] {
   color: #777777;
 }
@@ -284,31 +288,56 @@ input[type="checkbox" i] {
   padding: 10px;
   color: #08693E;
 }
-.add__files--wrapper {
-  margin: 50px 0;
-}
-.add__files--wrapper h4 {
-  margin: 0 30px 10px 15px;
-}
-.add__files--input {
-  margin-right: 10px;
-  padding-left: 10px;
-}
-.add__files--input input{
+.input__date {
   border: thin solid #08693E;
   border-radius: 15px;
+  box-shadow: none;
+  width: auto;
+  box-sizing: unset;
+}
+
+.e-input-group, .e-input-group.e-control-wrapper {
+  margin: 0;
+  padding: 0;
+}
+.e-input-group:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left) {
+  border: none;
+}
+.e-input-group input.e-input, .e-input-group, .e-control-wrapper input, .e-input, {
+  min-height: auto;
+  padding: 5px 20px;
+}
+.e-control, .e-datetimepicker, .e-lib, .e-input, .e-keyboard {
+  margin-bottom: 0;
+  border: 0;
+}
+
+
+.add__files--wrapper {
+margin: 50px 0;
+}
+.add__files--wrapper h4 {
+margin: 0 30px 10px 15px;
+}
+.add__files--input {
+margin-right: 10px;
+padding-left: 10px;
+}
+.add__files--input input{
+border: thin solid #08693E;
+border-radius: 15px;
 }
 
 
 
 .forgot__wrapper {
-  border-top: thin solid #08693E;
-  padding-top: 20px;
-  margin-top: 30px;
+border-top: thin solid #08693E;
+padding-top: 20px;
+margin-top: 30px;
 }
 .forgot__wrapper p, .forgot__link {
-  font-size: 1rem;
-  line-height: 0.75rem;
+font-size: 1rem;
+line-height: 0.75rem;
 }
 
 

@@ -1,12 +1,14 @@
 import * as React from 'react';
 import logo__section from "./assets/img/FA-APP-logo.svg";
 import {FaCheckCircle} from "react-icons/fa";
+import background from "./assets/img/hClinic2.jpg";
 
 
 
 export const Pacientes = (props) => {
     return (
-        <div>
+        <div className="bk__image"
+             style={{ backgroundImage: `url(${background})` }}>
             <section>
                 <img className="logo__section" src={logo__section} alt={'LogoApp'}/>
 
