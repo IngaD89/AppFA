@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class IntegrationTest {
     @Test
     public void devuelveListaDePacientes() throws Exception{
         List<Paciente> pacientes = List.of(
-                new Paciente (1L, "403998", "646474723", ZonedDateTime.of("2021-09-24T10:00:00"), true, false, "archivo.jpg"),
+                new Paciente (1L, "403998", "646474723", LocalDateTime.parse("2022-03-04T10:15:30"), true, false, "archivo.jpg"),
                 new Paciente(2L, "503998", "546474723", LocalDateTime.parse("2022-03-04T10:15:30"), false, true, "archivo.png")
         );
         pacienteRepository.saveAll(pacientes);
