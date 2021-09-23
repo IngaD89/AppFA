@@ -104,11 +104,9 @@ public class Paciente {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        LocalDateTime localDateTime = LocalDateTime.now();
-        localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
-        ZoneId zoneId = ZoneId.of("Europe/Paris");
-        this.fechaRegistro = LocalDateTime.from(ZonedDateTime.of(LocalDateTime.now(), zoneId));
+    public void setFechaRegistro(LocalDateTime localDateTime) {
+
+        this.fechaRegistro = localDateTime;
     }
 
     public LocalDateTime getPruebaEsfuerzo() {

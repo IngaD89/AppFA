@@ -30,7 +30,7 @@ export const Pacientes = (props) => {
                         <h3 className="card__title">Ficha Paciente</h3>
                         <div className="card__details">
                             <div className="card__details--titles">
-                                <p className="card__subTitle--details">ID:</p>
+                                <p className="card__subTitle--details">{"id: " + props.pacientes.id}</p>
                                 <p className="card__subTitle--details">NHC:</p>
                                 <p className="card__subTitle--details">Teléfono:</p>
                                 <p className="card__subTitle--details">Fecha de Registro:</p>

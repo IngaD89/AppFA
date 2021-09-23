@@ -40,7 +40,7 @@ export const App = () => {
             <NavigationBar/>
             <Switch>
                <Route exact path="/">
-                    <Inicio/>
+                    <Inicio />
                 </Route>
                 <Route path="/altas">
                     <Altas cuandoTermines={cuandoTermines}/>
