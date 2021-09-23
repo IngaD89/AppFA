@@ -29,7 +29,10 @@ export const Alerts = (props) => {
         [rows],
     );
 
+    /*const handleSubmit = (event) => {
+        event.preventDefault();
 
+<<<<<<< HEAD
     return (
       <table>
           <thead>
@@ -42,6 +45,14 @@ export const Alerts = (props) => {
           </tbody>
       </table>
     );
+=======
+        const api = new PacientesApi()
+
+        api.savePaciente(datos)
+            .then(() => setEnviado(true))
+            .then(props.cuandoTermines)
+    }*/
+>>>>>>> e1c397ba51ba9944b99d4b6233414fc3cc1cda8b
 
 
     return (
