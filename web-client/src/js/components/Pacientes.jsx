@@ -7,8 +7,7 @@ import background from "./assets/img/hClinic2.jpg";
 
 export const Pacientes = (props) => {
     return (
-        <div className="bk__image"
-             style={{ backgroundImage: `url(${background})` }}>
+        <div>
             <section>
                 <img className="logo__section" src={logo__section} alt={'LogoApp'}/>
 

@@ -18,7 +18,7 @@ html {
   background-size: cover;
   background-color: #b8b7ad;
   padding: 0;
-  width: 100%;
+  margin:0;
   height: 100vh;
 }
 
@@ -216,7 +216,6 @@ section {
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto ;
-
 }
 
 /* FORMS */
@@ -251,18 +250,12 @@ input {
   box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
 }
-/*.e-input-group .e-control-wrapper, .e-datetime-wrapper .e-control, .e-datetimepicker, .e-lib .e-input, .e-keyboard {
-  padding: 5px 20px 5px 10px;
-  border: thin solid #08693E;
-  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
-}*/
-
-
 
 input[type="date" i] {
   color: #777777;
 }
+
+
 .checkboxes {
   margin: 40px 0 60px 0;
 }
@@ -288,29 +281,9 @@ input[type="checkbox" i] {
   padding: 10px;
   color: #08693E;
 }
-.input__date {
-  border: thin solid #08693E;
-  border-radius: 15px;
-  box-shadow: none;
-  width: auto;
-  box-sizing: unset;
-}
 
-.e-input-group, .e-input-group.e-control-wrapper {
-  margin: 0;
-  padding: 0;
-}
-.e-input-group:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left) {
-  border: none;
-}
-.e-input-group input.e-input, .e-input-group, .e-control-wrapper input, .e-input, {
-  min-height: auto;
-  padding: 5px 20px;
-}
-.e-control, .e-datetimepicker, .e-lib, .e-input, .e-keyboard {
-  margin-bottom: 0;
-  border: 0;
-}
+
+
 
 
 .add__files--wrapper {
@@ -327,9 +300,6 @@ padding-left: 10px;
 border: thin solid #08693E;
 border-radius: 15px;
 }
-
-
-
 .forgot__wrapper {
 border-top: thin solid #08693E;
 padding-top: 20px;
@@ -343,25 +313,6 @@ line-height: 0.75rem;
 
 /* CARD */
 
-/*.pacientes__searchBar {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 60px 0;
-}
-.pacientes__searchBar input {
-  color: #777;
-  text-transform: none;
-  font-weight: 500;
-}
-.pacientes__searchBar input[placeholder] {
-  color: #777;
-  text-transform: none;
-  font-weight: 500;
-}*/
-
-.pacientes__wrapper {
-
-}
 .pacientes__details {
   padding: 20px;
 }
@@ -395,7 +346,6 @@ line-height: 0.75rem;
 .card__text {
   font-weight: 500;
 }
-
 .pacientes__alerts {
   border-top: thin solid #CCC;
   border-bottom: thin solid #CCC;
@@ -403,9 +353,9 @@ line-height: 0.75rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+
 }
-
-
 
 /* CONTACTO */
 
@@ -417,7 +367,6 @@ line-height: 0.75rem;
 .contacto__link {
   font-size: 1.1rem;
   margin: 0 0 10px 0;
-
 }
 .contacto__link:hover {
   font-weight: 600;
