@@ -20,7 +20,7 @@ export const App = () => {
     const [necesitoActualizar, setNecesitoActualizar] = useState(true)
 
 
-    // a´rreglar :^actualizar cuando se crea
+    // arreglar : actualizar cuando se crea
     useEffect(() => {
         if(necesitoActualizar) {
             pacientesApi.getPacientes()
@@ -36,9 +36,10 @@ export const App = () => {
 
 
         return <Router>
+
             <NavigationBar/>
             <Switch>
-                <Route exact path="/">
+               <Route exact path="/">
                     <Inicio/>
                 </Route>
                 <Route path="/altas">
@@ -48,7 +49,7 @@ export const App = () => {
                     <PacienteCard pacientes={pacientes}/>
                 </Route>
                 <Route path="/alerts">
-                    <Alerts/>
+                    <Alerts />
                 </Route>
                 <Route path="/contacto">
                     <Contacto/>

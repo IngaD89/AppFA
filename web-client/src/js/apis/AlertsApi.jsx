@@ -4,7 +4,7 @@ export class AlertsApi {
 
 
     getAlertas() {
-        return fetch("http://localhost:8080/alerts")
+        return fetch("alerts")
             .then(response => response.json())
     }
 }

@@ -2,9 +2,8 @@ import '../scss/main.scss';
 import '../scss/dateTimePicker.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
 import {App} from './components/App.jsx'
+
 
 ReactDOM.render(
     React.createElement(App),
