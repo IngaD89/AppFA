@@ -1,6 +1,5 @@
 import * as React from 'react';
 import logo__section from "./assets/img/FA-APP-logo.svg";
-import {FaCheckCircle} from "react-icons/fa";
 import background from "./assets/img/hClinic2.jpg";
 
 
