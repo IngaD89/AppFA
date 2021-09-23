@@ -4,6 +4,7 @@ import {PacientesApi} from "../apis/PacientesApi";
 import {Redirect} from "react-router-dom"
 import logo__section from "./assets/img/FA-APP-logo.svg";
 import {DateTimePickerComponent} from "@syncfusion/ej2-react-calendars";
+import background from "./assets/img/hClinic2.jpg";
 
 
 
@@ -48,7 +49,8 @@ export const Altas = (props) => {
 
 
     return (enviado ? <Redirect to="/pacientes"/> :
-            <div>
+            <div className="bk__image"
+                 style={{ backgroundImage: `url(${background})` }}>
 
                 <section>
                     <img className="logo__section" src={logo__section} alt={'LogoApp'}/>
@@ -77,11 +79,13 @@ export const Altas = (props) => {
                         </div>
                         <div className="input__wrapper">
                             <label>Fecha de registro</label>
-                            <DateTimePickerComponent
-                                id="fechaRegistro"
-                                type="date"
-                                name="fechaRegistro"
-                                onChange={handleInputChange}/>
+                            <div className="input__date">
+                                <DateTimePickerComponent
+                                    id="fechaRegistro"
+                                    type="date"
+                                    name="fechaRegistro"
+                                    onChange={handleInputChange}/>
+                            </div>
                         </div>
                         <div className="input__wrapper">
                             <label>Prueba Esfuerzo</label>
@@ -132,6 +136,7 @@ export const Altas = (props) => {
                             <input className="btn"
                                    type="submit"
                                    value="Dar de Alta"
+                                   onClick={handleSubmit}/>
                             />
 
                         </div>

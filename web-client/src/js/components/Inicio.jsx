@@ -1,11 +1,13 @@
 import * as React from 'react';
 import Mailto from "react-protected-mailto";
 import logo__section from "./assets/img/FA-APP-logo.svg";
+import background from "./assets/img/hClinic2.jpg";
 
 export const Inicio = () => {
 
         return (
-            <div>
+            <div className="bk__image"
+                  style={{ backgroundImage: `url(${background})` }}>
                 <section>
                     <img className="logo__section" src={logo__section} alt={'FA-APP'} />
 
