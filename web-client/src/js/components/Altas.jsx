@@ -142,6 +142,8 @@ export const Altas = (props) => {
                                    type="submit"
                                    value="Dar de Alta"
                                    onClick={handleSubmit}/>
+                            />
+
                         </div>
 
                     </form>

@@ -5,9 +5,7 @@ import logo from './assets/img/FA-APP-logo.svg';
 import {FaHome, FaUser, FaListAlt, FaBell, FaQuestionCircle, FaSignOutAlt} from 'react-icons/fa';
 
 
-
 export const NavigationBar = (props) => {
-
     return (
         <Menu>
             <div className="logo__wrapper">

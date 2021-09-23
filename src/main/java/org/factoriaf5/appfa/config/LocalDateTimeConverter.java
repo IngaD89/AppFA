@@ -1,4 +1,3 @@
-/*
 package org.factoriaf5.appfa.config;
 
 import org.factoriaf5.appfa.models.Paciente;
@@ -24,4 +23,3 @@ public class LocalDateTimeConverter extends AttributeConverter<Paciente, LocalDa
         return null;
     }
 }
-*/

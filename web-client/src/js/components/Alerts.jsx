@@ -23,7 +23,15 @@ export const Alerts = (props) => {
         [rows],
     );
 
+    /*const handleSubmit = (event) => {
+        event.preventDefault();
 
+        const api = new PacientesApi()
+
+        api.savePaciente(datos)
+            .then(() => setEnviado(true))
+            .then(props.cuandoTermines)
+    }*/
 
 
     return (

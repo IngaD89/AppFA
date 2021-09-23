@@ -57,7 +57,11 @@ public void creaAlertasAutomaticamenteParaUnPaciente() throws Exception {
 
 
 
+<<<<<<< HEAD
 Colaboradoras:
+=======
+Colaboradoras :
+>>>>>>> 5664ef7f254c22bbd86e0469d2a7f1c61286d9ad
 https://github.com/clauCampos
 https://github.com/IngaD89
 https://github.com/pepimartin
