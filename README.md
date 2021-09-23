@@ -3,6 +3,7 @@
                         FA- APP (Fibrosis Auricular)      
 
 Seguimiento de la Fibrosis Auricular en pacientes que participan en esta investigación. Se trata de una alteración de la conductividad normal del corazón (denominada ritmo sinusal), cuando las aurículas no se contraen adecuadamente y los ventrículos lo hacen de manera irregular y excesivamente rápida, impidiendo el normal funcionamiento del corazón.
+Lenguajes Utilizados: Java - JavaScript - SCSS - HTML
 
 Librerías utilizadas:
                      APP-FA (Dentro de está las carpetas) GRADLE-WEB-CLIENT-SRC
