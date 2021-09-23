@@ -78,7 +78,7 @@ export const Altas = (props) => {
 
                         </div>
                         <div className="input__wrapper">
-                            <label>Fecha de registro</label>
+                            <label>Fecha de Registro</label>
                             <div className="input__date">
                                 <DateTimePickerComponent
                                     id="fechaRegistro"
@@ -89,20 +89,25 @@ export const Altas = (props) => {
                         </div>
                         <div className="input__wrapper">
                             <label>Prueba Esfuerzo</label>
-                            <DateTimePickerComponent
-                                id="pruebaEsfuerzo"
-                                type="date"
-                                name="pruebaEsfuerzo"
-                                onChange={handleInputChange}/>
+                            <div className="input__date">
+                                <DateTimePickerComponent
+                                    id="pruebaEsfuerzo"
+                                    type="date"
+                                    name="pruebaEsfuerzo"
+                                    onChange={handleInputChange}/>
+                            </div>
                         </div>
                         <div className="input__wrapper">
-                            <label>ECO</label>
-                            <DateTimePickerComponent
-                                id="eco"
-                                type="date"
-                                name="eco"
-                                onChange={handleInputChange}/>
+                            <label>Eco</label>
+                            <div className="input__date">
+                                <DateTimePickerComponent
+                                    id="eco"
+                                    type="date"
+                                    name="eco"
+                                    onChange={handleInputChange}/>
+                            </div>
                         </div>
+
 
                         <div className="checkboxes">
                             <div className="checkbox__wrapper">
