@@ -4,6 +4,10 @@ Nombre del Proyecto:                                      (Proyecto no terminado
 
 -Seguimiento de la Fibrosis Auricular en pacientes que participan en esta investigación. Se trata de una alteración de la conductividad normal del corazón (denominada ritmo sinusal), cuando las aurículas no se contraen adecuadamente y los ventrículos lo hacen de manera irregular y excesivamente rápida, impidiendo el normal funcionamiento del corazón.
 
+* EL CLIENTE PIDE QUE ESTA APLICACION TENGA LAS SIGUIENTES FUNCIONALIDADES .
+
+-Formulario de Inscripción donde los pacientes se registren con su número de historial
+-alertas que le lleguen al médico como recordatorio de llamar al paciente y revision de su ficha (por mail o sms) estas serian 1 al mes de la inscripción del paciente, otra a los 3 meses y otra al año de seguimiento 
 
 -Lenguajes Utilizados: Java - JavaScript - SCSS - HTML
 
