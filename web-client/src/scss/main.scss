@@ -15,13 +15,8 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #b8b7ad;
-<<<<<<< HEAD
-=======
   padding: 0;
-  width: 100%;
   height: 100vh;
->>>>>>> 5664ef7f254c22bbd86e0469d2a7f1c61286d9ad
 }
 
 
@@ -35,11 +30,32 @@ html {
 .logo__section {
   margin: 0 auto 40px;
   padding: 0;
-  max-width: 200px;
   align-content: center;
 }
+.logo__img {
+  padding: 0;
+  max-width: 150px;
+}
 
+/* TITLES */
 
+h2 {
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-bottom: 40px;
+  padding: 0;
+}
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #08693E;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+p {
+  color: #111;
+}
 
 /* LINKS & BUTTONS */
 a {
@@ -103,26 +119,6 @@ a:hover {
   border-radius: 15px;
   font-weight: 700;
   text-align: center;
-}
-
-
-/* TITLES */
-
-h2 {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin-bottom: 50px;
-}
-h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #08693E;
-  margin-bottom: 20px;
-  padding: 0;
-}
-
-p {
-  color: #111;
 }
 
 
@@ -211,31 +207,29 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* SECTIONS */
 
 section {
-  padding: 30px 0 40px;;
+  padding: 15px 0 40px;
   text-align: center;
-  max-width: 50%;
+  max-width: 60%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0 auto ;
-
 }
+.form__alta, .form__inicio, .contacto__wrapper, .pacientes__wrapper, .alertas__wrapper {
+  border: thin solid #CCC;
+  text-align: center;
+  margin: 0 0 50px 0;
+  padding: 40px 80px 60px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 15px 20px rgba(0, 0, 0, 0.05);
+}
+
 
 /* FORMS */
 
 .form__inicio--title {
   border-bottom: thin solid #08693E;
   padding-bottom: 10px;
-}
-.form__alta, .form__inicio, .contacto__wrapper, .pacientes__wrapper, .alertas__wrapper {
-  border: thin solid #CCC;
-  text-align: center;
-  margin-bottom: 50px;
-  padding: 20px 40px 50px;
-  background-color: #FFFFFF;
-  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
-  min-height: 80vh;
 }
 .input__wrapper, .btn__submit--wrapper {
   margin: 0 10px 25px;
@@ -255,7 +249,6 @@ input {
   box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
 }
-<<<<<<< HEAD
 .input__date {
   border: thin solid #08693E;
   border-radius: 15px;
@@ -267,20 +260,6 @@ input {
   max-height: 20px;
 }
 
-=======
-/*.e-input-group .e-control-wrapper, .e-datetime-wrapper .e-control, .e-datetimepicker, .e-lib .e-input, .e-keyboard {
-  padding: 5px 20px 5px 10px;
-  border: thin solid #08693E;
-  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
-}*/
-
-
-
-input[type="date" i] {
-  color: #777777;
-}
->>>>>>> 5664ef7f254c22bbd86e0469d2a7f1c61286d9ad
 .checkboxes {
   margin: 40px 0 60px 0;
 }
@@ -306,137 +285,63 @@ input[type="checkbox" i] {
   padding: 10px;
   color: #08693E;
 }
-.input__date {
-  border: thin solid #08693E;
-  border-radius: 15px;
-  box-shadow: none;
-  width: auto;
-  box-sizing: unset;
-}
-
-<<<<<<< HEAD
-
-
-/*.add__files--wrapper {
-=======
-.e-input-group, .e-input-group.e-control-wrapper {
-  margin: 0;
-  padding: 0;
-}
-.e-input-group:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left) {
-  border: none;
-}
-.e-input-group input.e-input, .e-input-group, .e-control-wrapper input, .e-input, {
-  min-height: auto;
-  padding: 5px 20px;
-}
-.e-control, .e-datetimepicker, .e-lib, .e-input, .e-keyboard {
-  margin-bottom: 0;
-  border: 0;
-}
-
-
-.add__files--wrapper {
->>>>>>> 5664ef7f254c22bbd86e0469d2a7f1c61286d9ad
-margin: 50px 0;
-}
-.add__files--wrapper h4 {
-margin: 0 30px 10px 15px;
-}
-.add__files--input {
-margin-right: 10px;
-padding-left: 10px;
-}
-.add__files--input input{
-border: thin solid #08693E;
-border-radius: 15px;
-<<<<<<< HEAD
-}*/
-=======
-}
-
-
->>>>>>> 5664ef7f254c22bbd86e0469d2a7f1c61286d9ad
-
 .forgot__wrapper {
-border-top: thin solid #08693E;
-padding-top: 20px;
-margin-top: 200px;
+  border-top: thin solid #08693E;
+  padding-top: 20px;
+  margin-top: 200px;
 }
 .forgot__wrapper p, .forgot__link {
-font-size: 1rem;
-line-height: 0.75rem;
+  font-size: 1rem;
+  line-height: 0.75rem;
 }
 
 
-/* CARD */
+/* PACIENTES */
 
-/*.pacientes__searchBar {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 60px 0;
-}
-.pacientes__searchBar input {
-  color: #777;
-  text-transform: none;
-  font-weight: 500;
-}
-.pacientes__searchBar input[placeholder] {
-  color: #777;
-  text-transform: none;
-  font-weight: 500;
-}*/
-
-.pacientes__wrapper {
-
-}
 .pacientes__details {
-  padding: 20px;
+  padding: 40px;
 }
-.card__wrapper {
+.paciente__ficha {
   border: thin solid #CCCCCC;
   padding: 10px 0 30px 0;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.05);
 }
-.card__details {
-  display: flex;
-  justify-content: center;
+.paciente__ficha--details {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
   border-top: thin solid #CCCCCC;
   border-bottom: thin solid #CCCCCC;
   background-color: #FFFFFF;
-  padding: 30px 0 10px;
-}
-.card__subTitle--details {
-  margin: 0 10px 20px 0;
-  font-weight: 700;
+  padding: 20px;
   text-align: right;
 }
-.card__text--details {
+.paciente__ficha--text {
+  margin: 10px 10px 20px 0;
   font-weight: 700;
-  color: #08693E;
-  margin: 0 5px 20px 0;
   text-align: left;
+  color: #08693E;
 }
+
+
+/*
 .card__subTitle {
   font-weight: 600;
 }
 .card__text {
   font-weight: 500;
-}
+}*/
 
-.pacientes__alerts {
+/*.pacientes__alerts {
   border-top: thin solid #CCC;
   border-bottom: thin solid #CCC;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5664ef7f254c22bbd86e0469d2a7f1c61286d9ad
+}*/
 
 /* CONTACTO */
 
@@ -448,7 +353,6 @@ line-height: 0.75rem;
 .contacto__link {
   font-size: 1.1rem;
   margin: 0 0 10px 0;
-
 }
 .contacto__link:hover {
   font-weight: 600;
@@ -477,3 +381,20 @@ line-height: 0.75rem;
 .copy span {
   font-weight: bold;
 }
+
+
+
+/*.add__files--wrapper {
+margin: 50px 0;
+}
+.add__files--wrapper h4 {
+margin: 0 30px 10px 15px;
+}
+.add__files--input {
+margin-right: 10px;
+padding-left: 10px;
+}
+.add__files--input input{
+border: thin solid #08693E;
+border-radius: 15px;
+}*/

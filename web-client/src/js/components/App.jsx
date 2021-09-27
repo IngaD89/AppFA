@@ -10,7 +10,6 @@ import {useEffect, useState} from "react";
 import {PacientesApi} from "../apis/PacientesApi";
 
 
-
 export const App = () => {
 
     const pacientesApi = new PacientesApi();
@@ -20,9 +19,9 @@ export const App = () => {
     const [necesitoActualizar, setNecesitoActualizar] = useState(true)
 
 
-    // a´rreglar :^actualizar cuando se crea
+    // arreglar :^actualizar cuando se crea
     useEffect(() => {
-        if(necesitoActualizar) {
+        if (necesitoActualizar) {
             pacientesApi.getPacientes()
                 .then(setPacientes)
                 .then(_ => setNecesitoActualizar(false))
@@ -31,35 +30,29 @@ export const App = () => {
 
 
     const cuandoTermines = () => {
-      setNecesitoActualizar(true)
+        setNecesitoActualizar(true)
     }
 
 
-        return <Router>
-            <NavigationBar/>
-            <Switch>
-<<<<<<< HEAD
-               <Route exact path="/">
-                    <Inicio />
-=======
-                <Route exact path="/">
-                    <Inicio/>
->>>>>>> e1c397ba51ba9944b99d4b6233414fc3cc1cda8b
-                </Route>
-                <Route path="/altas">
-                    <Altas cuandoTermines={cuandoTermines}/>
-                </Route>
-                <Route exact path="/pacientes">
-                    <PacienteCard pacientes={pacientes}/>
-                </Route>
-                <Route path="/alerts">
-                    <Alerts/>
-                </Route>
-                <Route path="/contacto">
-                    <Contacto/>
-                </Route>
-            </Switch>
-        </Router>
-
-
+    return <Router>
+        <NavigationBar/>
+        <Switch>
+            <Route exact path="/">
+                <Inicio/>
+            </Route>
+            <Route path="/altas">
+                <Altas cuandoTermines={cuandoTermines}/>
+            </Route>
+            <Route exact path="/pacientes">
+                <PacienteCard pacientes={pacientes}/>
+            </Route>
+            <Route path="/alerts">
+                <Alerts/>
+            </Route>
+            <Route path="/contacto">
+                <Contacto/>
+            </Route>
+        </Switch>
+    </Router>
 }
+
