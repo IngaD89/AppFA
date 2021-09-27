@@ -124,7 +124,8 @@ export const Altas = (props) => {
                                        id="consentimiento"
                                        name="consentimiento"
                                        type="checkbox"
-                                       onChange={handleInputChange}/>
+                                       onChange={handleInputChange}
+                                />
                             </div>
                             <div className="add__files--wrapper">
                                 <label>Archivos</label>
@@ -132,7 +133,8 @@ export const Altas = (props) => {
                                        id="archivos"
                                        name="archivos"
                                        type="file"
-                                       onChange={handleInputChange}/>
+                                       onChange={handleInputChange}
+                                />
                             </div>
                         </div>
 
@@ -141,7 +143,7 @@ export const Altas = (props) => {
                             <input className="btn"
                                    type="submit"
                                    value="Dar de Alta"
-                                   onClick={handleSubmit}/>
+                                   onClick={handleSubmit}
                             />
 
                         </div>
