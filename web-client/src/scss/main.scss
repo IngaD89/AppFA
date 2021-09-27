@@ -16,7 +16,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0;
-  height: 100vh;
+
 }
 
 
@@ -34,7 +34,7 @@ html {
 }
 .logo__img {
   padding: 0;
-  max-width: 150px;
+  max-width: 35%;
 }
 
 /* TITLES */
@@ -212,6 +212,7 @@ section {
   max-width: 60%;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
   margin: 0 auto ;
 }
@@ -320,9 +321,8 @@ input[type="checkbox" i] {
 }
 .paciente__ficha--text {
   margin: 10px 10px 20px 0;
-  font-weight: 700;
+  font-weight: 600;
   text-align: left;
-  color: #08693E;
 }
 
 
@@ -342,6 +342,9 @@ input[type="checkbox" i] {
   justify-content: space-between;
   flex-direction: column;
 }*/
+/* CONTACTO */
+
+
 
 /* CONTACTO */
 

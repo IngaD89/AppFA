@@ -1,23 +1,17 @@
 import * as React from 'react';
-import {DataGrid} from "@mui/x-data-grid";
-
 import logo__section from "./assets/img/FA-APP-logo.svg";
 import background from "./assets/img/hClinic2.jpg";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {AlertsApi} from "../apis/AlertsApi";
 
 
 export const Alerts = (props) => {
 
-    const [rows, setRows] = React.useState([]);
+    const [alertas, setAlertas] = useState([]);
 
     useEffect(() => {
-        new AlertsApi().getAlerts().then(setRows)
+        new AlertsApi().getAlerts().then(setAlertas)
     }, [])
-
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
 
 
         return (
@@ -33,12 +27,12 @@ export const Alerts = (props) => {
                             <table>
                                 <thead>
                                 <tr>
-                                    <td>nhc</td>
+                                    <td>NHC</td>
                                     <td>Fecha</td>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {rows.map(alerta =>
+                                {alertas.map(alerta =>
                                     <tr>
                                         <td>{alerta.nhc}</td>
                                         <td>{alerta.dateTime}</td>
@@ -62,11 +56,6 @@ export const Alerts = (props) => {
                 </section>
             </div>
         )
-    }
 
-
-    {/*<div>{props.pacientes.nhc}</div>
-<div>{props.pacientes.fechaRegistro}</div>*/
-    }
 }
 
