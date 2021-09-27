@@ -4,10 +4,7 @@ package org.factoriaf5.appfa.models;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 
 @Entity

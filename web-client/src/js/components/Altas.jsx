@@ -71,9 +71,6 @@ export const Altas = (props) => {
                                    type="text"
                                    name="telefono"
                                    placeholder="+34 123456789"
-
-                                /* pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
-                                 required*/
                                    onChange={handleInputChange}/>
 
                         </div>

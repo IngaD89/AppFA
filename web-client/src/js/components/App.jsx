@@ -19,7 +19,6 @@ export const App = () => {
     const [necesitoActualizar, setNecesitoActualizar] = useState(true)
 
 
-    // arreglar :^actualizar cuando se crea
     useEffect(() => {
         if (necesitoActualizar) {
             pacientesApi.getPacientes()

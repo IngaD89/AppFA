@@ -4,7 +4,6 @@ import org.factoriaf5.appfa.models.Alert;
 import org.factoriaf5.appfa.models.Paciente;
 import org.factoriaf5.appfa.repositories.AlertRepository;
 import org.factoriaf5.appfa.repositories.PacienteRepository;
-import org.factoriaf5.appfa.services.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,7 @@ import java.util.Optional;
 public class PacienteController {
     private PacienteRepository pacienteRepository;
     private AlertRepository alertRepository;
-    private PacienteService pacienteService;
+
 
 
     @Autowired

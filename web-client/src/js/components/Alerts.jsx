@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {AlertsApi} from "../apis/AlertsApi";
 
 
-export const Alerts = (props) => {
+export const Alerts = () => {
 
     const [alertas, setAlertas] = useState([]);
 
@@ -46,7 +46,6 @@ export const Alerts = (props) => {
                             <input className="btn"
                                    type="submit"
                                    value="Guardar"
-                                // onSubmit={handleSubmit}
                             />
                         </div>
 
