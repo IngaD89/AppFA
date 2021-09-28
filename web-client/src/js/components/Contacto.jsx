@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Mailto from 'react-protected-mailto';
 import logo__section from "./assets/img/FA-APP-logo.svg";
-import background from "./assets/img/hClinic2.jpg";
+import background from "./assets/img/hClinic.jpg";
 
 
 export const Contacto = () => {

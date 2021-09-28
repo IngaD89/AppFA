@@ -16,9 +16,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0;
-
+  min-height: 100vh;
 }
-
 
 /* LOGO */
 .logo__wrapper {
@@ -28,13 +27,10 @@ html {
   max-width: 180px;
 }
 .logo__section {
-  margin: 0 auto 40px;
+  margin: 10px auto 30px;
   padding: 0;
   align-content: center;
-}
-.logo__img {
-  padding: 0;
-  max-width: 35%;
+  width: 210px;
 }
 
 /* TITLES */
@@ -42,17 +38,16 @@ html {
 h2 {
   font-weight: 600;
   font-size: 1.7rem;
-  margin-bottom: 40px;
-  padding: 0;
+  padding: 0 0 10px;
+  border-bottom: thin solid #08693E;
+  margin-bottom: 50px;
 }
 h3 {
   font-size: 1.3rem;
   font-weight: 600;
   color: #08693E;
-  margin-bottom: 20px;
-  padding: 0;
+  padding: 0 0 10px;
 }
-
 p {
   color: #111;
 }
@@ -83,17 +78,9 @@ a:hover {
 }
 .buttons__wrapper {
   padding-top: 20px;
-  margin-top: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 20px;
-}
-.buttons__wrapper--card {
-  padding: 30px 50px 0 50px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  gap: 40px;
 }
 .btn {
   background-color: transparent;
@@ -111,16 +98,12 @@ a:hover {
   border: 2px solid #08693E;
   background-color: #08693E;
 }
-.add__files--btn {
-  color: #08693E;
-  padding: 8px 30px 8px 30px;
-  border: thin solid #08693E;
-  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
-  font-weight: 700;
-  text-align: center;
+.btn__ini {
+  margin-top: 30px;
 }
-
+.buttons__wrapper--paciente {
+  margin: 20px;
+}
 
 /* MENU BURGER */
 /* Position and sizing of burger button */
@@ -131,29 +114,24 @@ a:hover {
   left: 36px;
   top: 36px;
 }
-
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #08693E;
 }
-
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
   background: #fd0d0d;
 }
-
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
   height: 24px;
   width: 24px;
   color: #fd0d0d;
 }
-
 /* Color/shape of close button cross */
 .bm-cross {
   background: #08693E;
 }
-
 /*
 Sidebar wrapper styles
 Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
@@ -164,7 +142,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   top: 0;
   left: 0;
 }
-
 /* General sidebar styles */
 .bm-menu {
   background: rgba(255, 255, 255, 1);
@@ -172,7 +149,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 1.2em;
   text-align: left;
 }
-
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
   fill: #CCC;
@@ -181,7 +157,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item-list {
   color: #b8b7ad;
 }
-
 /* Individual item */
 .bm-item {
   display: flex;
@@ -195,14 +170,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin: 0 20px 0 5px;
   padding-top: 20px;
 }
-
-
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.2);
 }
-
-
 
 /* SECTIONS */
 
@@ -228,12 +199,9 @@ section {
 
 /* FORMS */
 
-.form__inicio--title {
-  border-bottom: thin solid #08693E;
-  padding-bottom: 10px;
-}
+
 .input__wrapper, .btn__submit--wrapper {
-  margin: 0 10px 25px;
+  margin: 0 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -260,91 +228,90 @@ input {
   padding: 0 20px 5px;
   max-height: 20px;
 }
-
 .checkboxes {
-  margin: 40px 0 60px 0;
+  margin: 50px 0 60px 0;
 }
 .checkbox__wrapper {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+}
+.checkbox__label {
+  margin: 10px 20px;
+  width: 60%;
 }
 .checkbox__input {
   padding: 5px 20px;
   border: thin solid #08693E;
   border-radius: 15px;
   box-shadow: none;
-  width: auto;
-  box-sizing: unset;
 }
-.checkbox__label {
-  margin: 10px 20px;
-  width: 60%;
+.add__files--wrapper {
+  margin: 40px 0 0;
+  text-align: left;
+  padding-left: 10px;
+  width: 100%;
 }
-input[type="checkbox" i] {
-  appearance: auto;
+.add__files--input {
+  margin-right: 10px;
   border: thin solid #08693E;
-  padding: 10px;
-  color: #08693E;
+  border-radius: 15px;
+  padding-right: 130px;
 }
+
+/* INICIO */
+
 .forgot__wrapper {
   border-top: thin solid #08693E;
   padding-top: 20px;
-  margin-top: 200px;
+  margin-top: 80px;
 }
 .forgot__wrapper p, .forgot__link {
   font-size: 1rem;
   line-height: 0.75rem;
 }
 
-
 /* PACIENTES */
 
-.pacientes__details {
-  padding: 40px;
-}
+
 .paciente__ficha {
   border: thin solid #CCCCCC;
-  padding: 10px 0 30px 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  padding: 20px 0;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .paciente__ficha--details {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  flex-direction: column;
   border-top: thin solid #CCCCCC;
   border-bottom: thin solid #CCCCCC;
   background-color: #FFFFFF;
-  padding: 20px;
   text-align: right;
+  padding: 20px 0 30px;
 }
 .paciente__ficha--text {
-  margin: 10px 10px 20px 0;
   font-weight: 600;
   text-align: left;
+  margin: 15px 15px 0;
 }
 
 
-/*
-.card__subTitle {
-  font-weight: 600;
+/* ALERTAS */
+
+.alertas__tabla {
+  border: thin solid #CCC;
+  max-width: 100%;
+  margin: 0 auto 40px;
 }
-.card__text {
-  font-weight: 500;
-}*/
-
-/*.pacientes__alerts {
-  border-top: thin solid #CCC;
-  border-bottom: thin solid #CCC;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}*/
-/* CONTACTO */
-
-
+.alertas__tabla--title {
+  text-align: center;
+  padding: 10px 80px 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #08693E;
+}
+.alertas__tabla--text {
+  text-align: center;
+  padding: 10px 80px 5px;
+}
 
 /* CONTACTO */
 
@@ -360,14 +327,6 @@ input[type="checkbox" i] {
 .contacto__link:hover {
   font-weight: 600;
 }
-
-
-
-/* ALERTS */
-.Mui-checked {
-  color: #08693E;
-}
-
 
 
 /* FOOTER */
@@ -387,17 +346,3 @@ input[type="checkbox" i] {
 
 
 
-/*.add__files--wrapper {
-margin: 50px 0;
-}
-.add__files--wrapper h4 {
-margin: 0 30px 10px 15px;
-}
-.add__files--input {
-margin-right: 10px;
-padding-left: 10px;
-}
-.add__files--input input{
-border: thin solid #08693E;
-border-radius: 15px;
-}*/

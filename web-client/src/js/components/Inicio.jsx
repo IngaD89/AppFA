@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Mailto from "react-protected-mailto";
 import logo__section from "./assets/img/FA-APP-logo.svg";
-import background from "./assets/img/hClinic2.jpg";
+import background from "./assets/img/hClinic.jpg";
 
 export const Inicio = () => {
 
@@ -12,7 +12,7 @@ export const Inicio = () => {
                     <img className="logo__section" src={logo__section} alt={'FA-APP'} />
 
                     <form className="form__inicio">
-                        <h2 className="form__inicio--title">Iniciar sesión</h2>
+                        <h2>Iniciar sesión</h2>
                         <div className="input__wrapper">
                             <label>Usuario</label>
                             <input type="text"
@@ -25,7 +25,7 @@ export const Inicio = () => {
                                    placeholder="Contraseña"/>
                         </div>
                         <div className="buttons__wrapper">
-                            <input className="btn"
+                            <input className="btn btn__ini"
                                    type="submit"
                                    value="Iniciar Sesión"/>
                         </div>

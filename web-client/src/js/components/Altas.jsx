@@ -4,12 +4,11 @@ import {PacientesApi} from "../apis/PacientesApi";
 import {Redirect} from "react-router-dom"
 import logo__section from "./assets/img/FA-APP-logo.svg";
 import {DateTimePickerComponent} from "@syncfusion/ej2-react-calendars";
-import background from "./assets/img/hClinic2.jpg";
+import background from "./assets/img/hClinic.jpg";
 
 
 
 export const Altas = (props) => {
-
 
     const [datos, setDatos] = useState({
         nhc: '',
@@ -24,16 +23,12 @@ export const Altas = (props) => {
 
     const [enviado, setEnviado] = useState(false)
 
-
     const handleInputChange = (event) => {
         setDatos({
             ...datos,
             [event.target.name]: event.target.value
         })
     }
-
-
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -43,10 +38,7 @@ export const Altas = (props) => {
         api.savePaciente(datos)
             .then(() => setEnviado(true))
             .then(props.cuandoTermines)
-
-
     }
-
 
     return (enviado ? <Redirect to="/pacientes"/> :
             <div className="bk__image"
@@ -54,16 +46,16 @@ export const Altas = (props) => {
 
                 <section>
                     <img className="logo__section" src={logo__section} alt={'LogoApp'}/>
-                    <form className="form__alta" onSubmit={handleSubmit}>
-                        <h2 className="form__inicio--title">Alta Pacientes</h2>
+                    <form className="form__alta"
+                          onSubmit={handleSubmit}>
+                        <h2>Alta Pacientes</h2>
                         <div className="input__wrapper">
                             <label>NHC</label>
                             <input id="nhc"
                                    type="text"
                                    name="nhc"
                                    placeholder="Número de Historia Clínica"
-                                   onChange={handleInputChange}
-                            />
+                                   onChange={handleInputChange} />
                         </div>
                         <div className="input__wrapper">
                             <label>Teléfono</label>
@@ -71,11 +63,7 @@ export const Altas = (props) => {
                                    type="text"
                                    name="telefono"
                                    placeholder="+34 123456789"
-
-                                /* pattern="(\+34|0034)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
-                                 required*/
-                                   onChange={handleInputChange}/>
-
+                                   onChange={handleInputChange} />
                         </div>
                         <div className="input__wrapper">
                             <label>Fecha de Registro</label>
@@ -84,7 +72,7 @@ export const Altas = (props) => {
                                     id="fechaRegistro"
                                     type="date"
                                     name="fechaRegistro"
-                                    onChange={handleInputChange}/>
+                                    onChange={handleInputChange} />
                             </div>
                         </div>
                         <div className="input__wrapper">
@@ -94,7 +82,7 @@ export const Altas = (props) => {
                                     id="pruebaEsfuerzo"
                                     type="date"
                                     name="pruebaEsfuerzo"
-                                    onChange={handleInputChange}/>
+                                    onChange={handleInputChange} />
                             </div>
                         </div>
                         <div className="input__wrapper">
@@ -104,11 +92,9 @@ export const Altas = (props) => {
                                     id="eco"
                                     type="date"
                                     name="eco"
-                                    onChange={handleInputChange}/>
+                                    onChange={handleInputChange} />
                             </div>
                         </div>
-
-
                         <div className="checkboxes">
                             <div className="checkbox__wrapper">
                                 <label className="checkbox__label">Test Daño Miocardio</label>
@@ -116,7 +102,7 @@ export const Altas = (props) => {
                                        id="miocardio"
                                        name="miocardio"
                                        type="checkbox"
-                                       onChange={handleInputChange}/>
+                                       onChange={handleInputChange} />
                             </div>
                             <div className="checkbox__wrapper">
                                 <label className="checkbox__label">Consentimiento Informado</label>
@@ -124,8 +110,7 @@ export const Altas = (props) => {
                                        id="consentimiento"
                                        name="consentimiento"
                                        type="checkbox"
-                                       onChange={handleInputChange}
-                                />
+                                       onChange={handleInputChange} />
                             </div>
                             <div className="add__files--wrapper">
                                 <label>Archivos</label>
@@ -133,25 +118,17 @@ export const Altas = (props) => {
                                        id="archivos"
                                        name="archivos"
                                        type="file"
-                                       onChange={handleInputChange}
-                                />
+                                       onChange={handleInputChange} />
                             </div>
                         </div>
-
-
                         <div className="buttons__wrapper">
                             <input className="btn"
                                    type="submit"
                                    value="Dar de Alta"
-                                   onClick={handleSubmit}
                             />
-
                         </div>
-
                     </form>
-
                 </section>
             </div>
-
     )
 }
