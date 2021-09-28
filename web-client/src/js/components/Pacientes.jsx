@@ -28,8 +28,8 @@ export const Pacientes = (props) => {
                             <p className="paciente__ficha--text">{"Fecha de Registro: " + props.pacientes.fechaRegistro}</p>
                             <p className="paciente__ficha--text">{"Prueba de Esfuerzo: " + props.pacientes.pruebaEsfuerzo}</p>
                             <p className="paciente__ficha--text">{"Eco: " + props.pacientes.eco}</p>
-                            <p className="paciente__ficha--text">{"Test Daño Miocardio: " + props.pacientes.miocardio && "Si"}</p>
-                            <p className="paciente__ficha--text">{"Consentimiento Informado: " + props.pacientes.consentimiento && "Si"}</p>
+                            <p className="paciente__ficha--text">{props.pacientes.miocardio && "Test Daño Miocardio: Sí"}</p>
+                            <p className="paciente__ficha--text">{props.pacientes.consentimiento && "Consentimiento Informado: Sí"}</p>
 
 
 

@@ -64,8 +64,8 @@ public class Paciente {
         return consentimiento;
     }
 
-    public void setConsentimiento(boolean consentimiento) {
-        this.consentimiento = consentimiento;
+    public void setConsentimiento(String consentimiento) {
+        this.consentimiento = consentimiento.equals("on");
     }
 
     public boolean getMiocardio() {
