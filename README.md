@@ -10,7 +10,7 @@ Nombre del Proyecto:                                      (Proyecto no terminado
 -alertas que le lleguen al médico como recordatorio de llamar al paciente y revision de su ficha (por mail o sms) estas serian 1 al mes de la inscripción del paciente, otra a los 3 meses y otra al año de seguimiento 
 
 -Lenguajes Utilizados: Java - JavaScript - SCSS - HTML
-
+-Tecnologías y Herramientas - React, JS, Java con SpringBoot, Gradle, npm webpack, postgreSQL, H2, docker, postman, github, trello, slack
 
 -Librerías utilizadas:
                      APP-FA (Dentro de está las carpetas) GRADLE-WEB-CLIENT-SRC
