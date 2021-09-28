@@ -1,0 +1,127 @@
+# AppFA
+Project Name: (Project not finished yet in development)
+                        FA- APP (Atrial Fibrosis)
+
+-Follow-up of Atrial Fibrosis in patients participating in this research. It is an alteration of the normal conductivity of the heart (called sinus rhythm), when the atria do not contract properly and the ventricles do so irregularly and excessively quickly, preventing the normal functioning of the heart.
+
+* THE CUSTOMER REQUESTS THAT THIS APPLICATION HAVE THE FOLLOWING FUNCTIONALITIES.
+
+-Enrollment form where patients register with their history number
+-Alerts that reach the doctor as a reminder to call the patient and review their file (by mail or sms) these would be 1 a month after the patient's registration, another after 3 months and another after a year of follow-up
+
+-Languages ​​Used: Java - JavaScript - SCSS - HTML
+
+
+-Bookstores used:
+                     APP-FA (Inside are the folders) GRADLE-WEB-CLIENT-SRC
+
+                     Inside SRC a JS folder and another SCSS and an index.html file
+
+                     Inside JS - apis, components and a main.js
+
+                     Inside apis - AlertsApi.jsx and PatientsApi.jsx
+
+                     Inside components the files, Alerts.jsx-Altas.jsx-App.jsx-Contact.jsx-DateTime.jsx-Inici.jsx-NavigationBar.jsx-PacienteCard.jsx-Paciente.js
+
+                     Inside components an assets folder and inside this another call img and inside this the photos and logos
+
+                     Inside SCSS the dateTimePicker.scss and main.scss files
+
+                     We will also add gitignore files
+-Installed Docker
+
+* In AlertsApi.jsx file * we will add in which port we will see that our application is seen
+
+Ex: return fetch ("http: // localhost: 8080 / alerts")
+
+* inside assets * in the img file we will add all the photos and logos that we use
+Ex: FA-APP-logo.svg
+     hClinic.jpg
+
+* We check the code through Test found inside the JAVA file in a Controller called IntegrationTest *
+
+Ex: @Test
+public void createsAlertsAutomaticallyForAPatient () throws Exception {
+
+when we create a patient
+        mockMvc.perform (post ("/ patients"). contentType (MediaType.APPLICATION_JSON)
+                .content ("{\" registrationDate \ ": \" 2022-03-04T10: 15: 30 \ ", \" nhc \ ": \" 403998 \ "}"))
+                .andExpect (status (). isOk ());
+
+
+alerts are automatically created
+        mockMvc.perform (get ("/ alerts"))
+                .andExpect (status (). isOk ())
+                .andExpect (jsonPath ("$ [*]", hasSize (3)))
+                .andExpect (jsonPath ("$ [0] .dateTime", equalTo ("2022-04-04T10: 15: 30")))
+                .andExpect (jsonPath ("$ [0] .nhc", equalTo ("403998")))
+                .andExpect (jsonPath ("$ [1] .dateTime", equalTo ("2022-06-04T10: 15: 30")))
+                .andExpect (jsonPath ("$ [1] .nhc", equalTo ("403998")))
+                .andExpect (jsonPath ("$ [2] .dateTime", equalTo ("2023-03-04T10: 15: 30")))
+                .andExpect (jsonPath ("$ [2] .nhc", equalTo ("403998")));
+
+            }
+
+-Config folder: We find the FakeDataLoader and MvcConfig Controllers used to insert and delete configurations
+
+* Examples:
+
+    public FakeDataLoader (PatientRepository patientRepository) {
+this.patientRepository = patientRepository;
+}
+
+    public class MvcConfig implements WebMvcConfigurer {
+}
+
+
+-Controller folder: We find the controllers AlertsController, FileUploadUtil, PacienteController, used for the functionalities of creating alert (They do not work)
+
+Examples:
+    public class AlertsController {}
+
+public class FileUploadUtil {}
+
+@DeleteMapping ("/ patients / {id}")
+        public ResponseEntity <Patient> delete (@PathVariable Long id) {
+        Patient patient = patientRepository.findById (id) .orElse (null);
+        patientRepository.deleteById (id);
+        return ResponseEntity.ok (). body (patient);
+
+
+-Folder models: We find Alert and Patient alert generators with LocalDateTime and patients through void, long, string, called by set and get
+
+Examples:
+            @Table (name = "alerts")
+
+public Patient () {
+}
+
+public void setId (Long id) {
+        this.id = id;
+    }
+
+public Long getId () {
+        return id;
+    }
+
+public String getNhc () {
+        return nhc;
+    }
+
+public void setNhc (String nhc) {
+        this.nhc = nhc;
+    }
+
+
+
+
+
+
+
+Collaborators:
+https://github.com/clauCampos
+https://github.com/IngaD89
+https://github.com/pepimartin
+https://github.com/MaGa6969
+https://github.com/AngieFlower
+https://github.com/ranju-ky
