@@ -4,10 +4,7 @@ package org.factoriaf5.appfa.models;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 
 @Entity
@@ -67,8 +64,8 @@ public class Paciente {
         return consentimiento;
     }
 
-    public void setConsentimiento(boolean consentimiento) {
-        this.consentimiento = consentimiento;
+    public void setConsentimiento(String consentimiento) {
+        this.consentimiento = consentimiento.equals("on");
     }
 
     public boolean getMiocardio() {

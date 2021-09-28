@@ -63,7 +63,12 @@ export const Altas = (props) => {
                                    type="text"
                                    name="telefono"
                                    placeholder="+34 123456789"
+<<<<<<< HEAD
                                    onChange={handleInputChange} />
+=======
+                                   onChange={handleInputChange}/>
+
+>>>>>>> 329c2f87ce05f9c7285314cc53b64690bf6200cb
                         </div>
                         <div className="input__wrapper">
                             <label>Fecha de Registro</label>

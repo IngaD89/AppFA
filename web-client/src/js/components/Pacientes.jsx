@@ -17,13 +17,13 @@ export const Pacientes = (props) => {
                         <p className="paciente__ficha--text">{"Test Daño Miocardio: " + props.pacientes.miocardio && "Test Daño Miocardio: Si"}</p>
                         <p className="paciente__ficha--text">{"Consentimiento Informado: " + props.pacientes.consentimiento && "Consentimiento Informado: Si"}</p>
                     </div>
-                    <div className="buttons__wrapper buttons__wrapper--paciente">
+                    <div className="buttons__wrapper--card">
                         <input className="btn"
                                type="submit"
-                               value="Editar" />
+                               value="Editar"/>
                         <input className="btn"
                                type="submit"
-                               value="Borrar" />
+                               value="Borrar"/>
                     </div>
                 </div>
             </section>

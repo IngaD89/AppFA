@@ -4,6 +4,7 @@ import {AlertsApi} from "../apis/AlertsApi";
 import logo__section from "./assets/img/FA-APP-logo.svg";
 import background from "./assets/img/hClinic.jpg";
 
+
 export const Alerts = () => {
 
     const [alertas, setAlertas] = useState([]);
@@ -41,4 +42,3 @@ export const Alerts = () => {
         </div>
     )
 }
-
