@@ -102,7 +102,7 @@ a:hover {
   margin-top: 30px;
 }
 .buttons__wrapper--paciente {
-  margin: 20px;
+  padding: 20px;
 }
 
 /* MENU BURGER */
@@ -285,7 +285,9 @@ input {
   border-bottom: thin solid #CCCCCC;
   background-color: #FFFFFF;
   text-align: right;
-  padding: 20px 0 30px;
+  padding: 20px 10px 30px;
+  margin-bottom: 20px;
+  gap: 10px
 }
 .paciente__ficha--text {
   font-weight: 600;
