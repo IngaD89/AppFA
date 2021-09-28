@@ -42,13 +42,6 @@ export const Alerts = () => {
                             </table>
                         </div>
 
-                        <div className="buttons__wrapper">
-                            <input className="btn"
-                                   type="submit"
-                                   value="Guardar"
-                            />
-                        </div>
-
                     </div>
 
 
